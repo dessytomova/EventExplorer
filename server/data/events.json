@@ -1,0 +1,435 @@
+{
+  "7f96d0ba-cc61-4d3e-bfbd-85cbb40d6d63": {
+    "_id": "7f96d0ba-cc61-4d3e-bfbd-85cbb40d6d63",
+    "name": "Metal Legends VIO-LENCE for the First Time in Bulgaria.",
+    "description": "With great pleasure, BGTSC invites the cult thrash brigade VIO-LENCE for its first concert in Bulgaria next year. If we have to describe VIO-LENCE in one word, it's 'legendary'! The classics from the Bay Area in San Francisco are among the leaders of the second wave of American thrash metal from the latter half of the 80s. It is an honor for us to announce their concert on March 29th at Mixtape 5 club",
+    "datetime": "2024-03-29T07:22:00.358Z",
+    "host": "Mixtape 5",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd. Cherni vrah", 
+      "streetNumber": "1142"
+    },
+    "performingArtists": ["VIO-LENCE"],
+    "image": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/337001301_897138924946343_4698376668522369512_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=HBX9tnoNliAAX9MePpT&_nc_ht=scontent.fsof10-1.fna&oh=00_AfCfvcFReONC2ikY3AfpoF0NIaBgmSv_gb4-JT2-wStvzQ&oe=6553E2C7",
+    "ticketInfo": {
+      "price": "40lv-50lv",
+      "purchaseOptions": "Online", 
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/vio-lence-sofia-club-mixtape-5-1381811/performance.html"
+    }
+  },
+  "a8821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a8821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },
+  "ef57e8c3-7418-404b-9cf0-7b3c495b0150":{
+    "_id": "ef57e8c3-7418-404b-9cf0-7b3c495b0150",
+    "name": "Midalidare Rock In The Wine Valley 2024",
+    "description": "Midalidare Rock In The Wine Valley 2024 will take place between July 12th and 14th. The first headliner for 2024 is the legendary Deep Purple, who will perform on July 14th, Sunday.",
+    "datetime": "2024-07-14T07:22:00.358Z",
+    "host": "Midalidare Estate",
+    "address": {
+      "country": "BG",
+      "city": "Mogilovo",
+      "streetNumber": "6239"
+    },
+    "performingArtists": ["Deep Purple", "DJ Beta"],
+    "image": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
+    "ticketInfo": {
+      "purchaseOptions": "Online", 
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
+    }
+  },
+  "a4821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },
+  "a4825f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4825f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7g-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4821f7g-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4921f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4921f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4p21f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4p21f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a8821o7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a8821o7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a2221f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a2221f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7b-ff10-4ya1-bf56-59060c3a5c25": {
+    "_id": "a8821f7b-ff10-4ya1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7b-ff10-4ea1-4ea5-59060c3a5c25": {
+    "_id": "a8821f7b-ff10-4ea5-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7b-ff10-4ea1-bf06-59060c3a5c25": {
+    "_id": "a8821f7b-ff10-4ea1-bf06-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7b-ff90-4ea1-bf56-59060c3a5c25": {
+    "_id": "a8821f7b-ff90-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "l4821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "l4821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2"
+  },  
+  "a2821f70-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a2821f70-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a2821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a2821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  }, 
+   "a4821i7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "a4821i7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "o4821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "o4821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  }, 
+  "at821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "at821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "a4821f7b-ff10-4ea1-bf56-59060c3a5c26": {
+    "_id": "a8821f7b-ff10-4ea1-bf56-59060c3a5c26",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "y4821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "y4821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  },  
+  "t4821f7b-ff10-4ea1-bf56-59060c3a5c25": {
+    "_id": "t4821f7b-ff10-4ea1-bf56-59060c3a5c25",
+    "name": "Best of Miro",
+    "description": "THE GRAND FINALE",
+    "datetime": "2024-04-17T07:22:00.358Z",
+    "host": "Arena Sofia",
+    "address": {
+      "country": "BG",
+      "city": "Sofia",
+      "street": "Blvd Asen Yordanov",
+      "streetNumber": "1"
+    },
+    "performingArtists": ["Miro"],
+    "image": "https://source.unsplash.com/random/200×200/?festival,music-festival&sig=2",
+    "ticketInfo": {
+      "purchaseOptions": "Online",
+      "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+    }
+  }
+}
