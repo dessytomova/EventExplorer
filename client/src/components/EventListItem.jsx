@@ -3,7 +3,8 @@ import { formatDate } from "../utils/dateUtils";
 import styles from './EventListItem.module.css';
 import { Link } from "react-router-dom";
 
-const EventListItem = ({
+const EventListItem = (
+    {
     _id, 
     image, 
     name, 
@@ -13,18 +14,18 @@ const EventListItem = ({
     host, 
     address, 
     ticketInfo
-}) => {
+}
+) => {
     return (
         <Card style={{ width: '18rem' }} className={styles.card}>
             <Card.Img variant="top" src={image}/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                    {description}
+                <Card.Text className={styles.description}>
+                    {performingArtists.join(", ")}
                 </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
-                <ListGroup.Item>{performingArtists.join(", ")}</ListGroup.Item>
                 <ListGroup.Item>{formatDate(datetime)}</ListGroup.Item>
                 <ListGroup.Item>{host}</ListGroup.Item>
                 <ListGroup.Item>{address?.country}, {address?.city}, {address?.street} {address?.streetNumber}</ListGroup.Item>

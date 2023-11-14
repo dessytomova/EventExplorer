@@ -1,19 +1,21 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import EventDetails from "./EventListItem";
-
-const baseUrl = 'http://localhost:3030/jsonstore/events';
+import * as  eventService from "../services/eventService";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
-
+    
     useEffect(() => {
-        fetch(baseUrl)
-            .then(res => res.json())
-            .then(data => {
-                data = Object.values(data);
-                setEvents(data);
-            })
+        const abortController = new AbortController();
+
+        eventService
+            .getAll({ signal: abortController.signal })
+            .then(result => setEvents(result));
+
+        return () => {
+            abortController.abort();
+        }
     }, []);
 
     return (

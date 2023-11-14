@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, ListGroup, Row } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { formatDate } from "../utils/dateUtils";
-import styles from './EventListItem.module.css';
-
-const baseUrl = 'http://localhost:3030/jsonstore/events/';
+import styles from './EventDetails.module.css';
+import * as  eventService from "../services/eventService";
 
 const EventDetails = () => {
     const { id } = useParams();
@@ -12,17 +11,18 @@ const EventDetails = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`${baseUrl}${id}`)
-            .then(res => {
-                if (!res.ok) {
-                    throw new Error("Not Found");
-                }
-                return res.json()
-            })
+        const abortController = new AbortController();  // on unmount to abort the fetch
+
+        eventService
+            .getOne(id, { signal: abortController.signal })
             .then(setEvent)
             .catch((err) => {
                 navigate('/events');
             });
+
+        return () => {
+            abortController.abort();
+        }
     }, [id]);
 
     return (
@@ -32,7 +32,7 @@ const EventDetails = () => {
                     <Row>
                         <Col key={event._id} sm={12} md={12} lg={12} xl={12}>
                             <Card className={styles.card}>
-                                <Card.Img variant="top" src={event.image} />
+                                <Card.Img src={event.image} />
                                 <Card.Body>
                                     <Card.Title>{event.name}</Card.Title>
                                     <Card.Text>
