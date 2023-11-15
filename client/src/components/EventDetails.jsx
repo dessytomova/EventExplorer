@@ -40,9 +40,6 @@ const EventDetails = () => {
                                     </Card.Text>
                                 </Card.Body>
                                 <ListGroup className="list-group-flush">
-                                    {
-                                        event.performingArtists && <ListGroup.Item>{event.performingArtists.join(", ")}</ListGroup.Item>
-                                    }
                                     <ListGroup.Item>{formatDate(event.datetime)}</ListGroup.Item>
                                     <ListGroup.Item>{event.host}</ListGroup.Item>
                                     <ListGroup.Item>{event.address?.country}, {event.address?.city}, {event.address?.street} {event.address?.streetNumber}</ListGroup.Item>
@@ -50,7 +47,7 @@ const EventDetails = () => {
                                         event.ticketInfo?.price && <ListGroup.Item>{event.ticketInfo.price}</ListGroup.Item>
                                     }
                                     {
-                                        event.ticketInfo?.purchaseOptions && <ListGroup.Item>{event.ticketInfo.purchaseOptions}</ListGroup.Item>
+                                        event.ticketInfo?.purchaseOptions?.length > 0 && <ListGroup.Item>{event.ticketInfo.purchaseOptions.join(", ")}</ListGroup.Item>
                                     }
                                     {
                                         event.ticketInfo?.purchaseLink &&

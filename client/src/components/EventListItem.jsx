@@ -5,18 +5,18 @@ import { Link } from "react-router-dom";
 
 const EventListItem = (
     {
-    _id, 
-    imageUrl, 
-    name,  
-    datetime, 
-    host, 
-    address, 
-    ticketInfo
-}
+        _id,
+        imageUrl,
+        name,
+        datetime,
+        host,
+        address,
+        ticketInfo
+    }
 ) => {
     return (
         <Card style={{ width: '18rem' }} className={styles.card}>
-            <Card.Img variant="top" src={imageUrl}/>
+            <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
             </Card.Body>
@@ -27,15 +27,16 @@ const EventListItem = (
                 {
                     ticketInfo && ticketInfo.price && <ListGroup.Item>{ticketInfo.price}</ListGroup.Item>
                 }
-                {
-                    ticketInfo && ticketInfo.purchaseOptions &&  <ListGroup.Item>{ticketInfo.purchaseOptions}</ListGroup.Item>
-                }
-                {
-                    ticketInfo && ticketInfo.purchaseLink &&  
+                {ticketInfo?.purchaseOptions?.length > 0 && (
+                    <ListGroup.Item>{ticketInfo.purchaseOptions.join(', ')}</ListGroup.Item>
+                )}
+                {ticketInfo?.purchaseLink && (
                     <ListGroup.Item>
-                         <a href={ticketInfo.purchaseLink} target="_blank" rel="noopener noreferrer">Get A Ticket</a>
+                        <a href={ticketInfo.purchaseLink} target="_blank" rel="noopener noreferrer">
+                            Get A Ticket
+                        </a>
                     </ListGroup.Item>
-                }
+                )}
             </ListGroup>
             <Card.Body>
                 {/* <Card.Link href="#">Another Link</Card.Link> */}

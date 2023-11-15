@@ -17,6 +17,10 @@ const formInitialState = {
         streetNumber: '',
     },
     imageUrl: '',
+    online: false,
+    onGate: false,
+    purchaseLink: '',
+    price: ''
 };
 
 const CreateEventForm = () => {
@@ -30,34 +34,34 @@ const CreateEventForm = () => {
         switch (e.target.type) {
             case 'number': value = Number(e.target.value);
                 break;
-
+            case 'checkbox': value = e.target.checked;
+                break;
             default: value = e.target.value;
                 break;
         }
-        
+
         if (['country', 'city', 'street', 'streetNumber'].includes(name)) {
             setFormValues((state) => ({
                 ...state,
                 address: {
-                  ...state.address,
-                  [name]: value,
+                    ...state.address,
+                    [name]: value,
                 },
-              }));
+            }));
         } else {
-           setFormValues(state => ({ ...state, [name]: value }));
+            setFormValues(state => ({ ...state, [name]: value }));
 
-        }   
+        }
 
     }
 
 
     const submitHandler = (e) => {
         e.preventDefault();
-        // Handle form submission, e.g., send data to the server
         eventService.create(formValues);
         resetHandler();
         navigate('/events');
-          
+
     };
 
     const resetHandler = () => {
@@ -169,7 +173,48 @@ const CreateEventForm = () => {
                         />
                     </Form.Group>
 
-                    <Button variant="danger"  onClick={resetHandler}>
+                    <Form.Group controlId="purchaseOptions">
+                        <Form.Label>Purchase Options</Form.Label>
+                        <Form.Check
+                            type="checkbox"
+                            label="Online"
+                            name="online"
+                            checked={formValues.online}
+                            onChange={changeHandler}
+                            id="onlineCheckbox"
+                        />
+                        <Form.Check
+                            type="checkbox"
+                            label="On Gate"
+                            name="onGate"
+                            checked={formValues.onGate}
+                            onChange={changeHandler}
+                            id="onGateCheckbox"
+                        />
+                    </Form.Group>
+                    <Form.Group controlId="price">
+                    <Form.Label>Price</Form.Label>
+                        <Form.Control
+                            type="number"
+                            placeholder="Price"
+                            name="price"
+                            value={formValues.price}
+                            onChange={changeHandler}
+                        />
+                    </Form.Group>   
+                    <Form.Group controlId="purchaseLink">
+                        <Form.Label>Purchase Link</Form.Label>
+                        <Form.Control
+                            type="text"
+                            placeholder="Enter purchase link"
+                            name="purchaseLink"
+                            value={formValues.purchaseLink}
+                            onChange={changeHandler}
+                        />
+                    </Form.Group>
+
+
+                    <Button variant="danger" onClick={resetHandler}>
                         Reset
                     </Button>
                     <Button variant="primary" type="submit">

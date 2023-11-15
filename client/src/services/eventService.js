@@ -1,38 +1,49 @@
 const baseUrl = 'http://localhost:3030/jsonstore/events';
 
 export const getAll = async (prop) => {
-    const response = await fetch(baseUrl,prop);
+    const response = await fetch(baseUrl, prop);
     const result = await response.json();
     const data = Object.values(result);
     return data;
 };
 
 export const getOne = async (id, prop) => {
-    const response = await fetch(`${baseUrl}/${id}`,prop);
+    const response = await fetch(`${baseUrl}/${id}`, prop);
     return await response.json();
 };
 
 export const create = async (data) => {
     const body = {
-        name: data.name, 
+        name: data.name,
         description: data.description,
-        datetime: data.datetime, 
+        datetime: data.datetime,
         host: data.host,
         address: {
-            country: data.address.country, 
-            city: data.address.city, 
-            street: data.address.street, 
+            country: data.address.country,
+            city: data.address.city,
+            street: data.address.street,
             streetNumber: data.address.streetNumber,
-        }, 
-        imageUrl: data.imageUrl
+        },
+        imageUrl: data.imageUrl,
+        ticketInfo: {
+            purchaseOptions: [],
+            purchaseLink: data.purchaseLink
+        }
     }
 
+    if (data.online) body.ticketInfo.purchaseOptions.push('Online');
+    if (data.onGate) body.ticketInfo.purchaseOptions.push('On Gate');
+    if (data.price) body.ticketInfo.price = data.price;
+
+
+    console.log(body);
+
     const response = await fetch(baseUrl, {
-        method: 'POST', 
+        method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify(body), 
+        body: JSON.stringify(body),
     });
 
     return await response.json();

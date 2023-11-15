@@ -11,11 +11,10 @@
       "street": "Blvd. Cherni vrah", 
       "streetNumber": "1142"
     },
-    "performingArtists": ["VIO-LENCE"],
     "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/337001301_897138924946343_4698376668522369512_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=HBX9tnoNliAAX9MePpT&_nc_ht=scontent.fsof10-1.fna&oh=00_AfCfvcFReONC2ikY3AfpoF0NIaBgmSv_gb4-JT2-wStvzQ&oe=6553E2C7",
     "ticketInfo": {
       "price": "40lv-50lv",
-      "purchaseOptions": "Online", 
+      "purchaseOptions": ["Online", "On Gate"], 
       "purchaseLink": "https://www.eventim.bg/bg/bileti/vio-lence-sofia-club-mixtape-5-1381811/performance.html"
     }
   },
@@ -31,10 +30,10 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
+
     "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/400765483_737466695088095_5047136818321204851_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=aeVw4HZ8TBUAX-C9znK&_nc_ht=scontent.fsof10-1.fna&oh=00_AfAjdRRSgrot0nCj_Qw5B7H4tha1hJiJHkTwudAVrWVI4Q&oe=65595FD8",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },
@@ -49,10 +48,9 @@
       "city": "Mogilovo",
       "streetNumber": "6239"
     },
-    "performingArtists": ["Deep Purple", "DJ Beta"],
     "imageUrl": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
     "ticketInfo": {
-      "purchaseOptions": "Online", 
+      "purchaseOptions": ["Online"], 
       "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
     }
   },
@@ -68,10 +66,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1514533450685-4493e01d1fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0NjIz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },
@@ -87,10 +84,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1514533450685-4493e01d1fdc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0NjIz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -106,10 +102,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1519326773765-3ae3b02c44cc?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0ODQz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -125,10 +120,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1469488865564-c2de10f69f96?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0ODcz&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -144,10 +138,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1470229538611-16ba8c7ffbd7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0ODk2&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -163,10 +156,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1454908027598-28c44b1716c1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0OTI5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -182,10 +174,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1521337706264-a414f153a5ed?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0OTQ0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -201,10 +192,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1603228254119-e6a4d095dc59?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0OTYx&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -220,10 +210,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1493676304819-0d7a8d026dcf?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM0OTg0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -239,10 +228,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1506157999258-a35364384ce9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDAx&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -258,10 +246,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1501527459-2d5409f8cf9f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDE5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -277,7 +264,6 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDM5&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"
   },  
   "a2821f70-ff10-4ea1-bf56-59060c3a5c25": {
@@ -292,10 +278,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1540909045578-f67968b149db?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDUy&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -311,10 +296,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1520600661691-801f48869ee4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDY1&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   }, 
@@ -330,10 +314,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1442975433132-cb9580b88538?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MDgw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -349,10 +332,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1501389040983-5c22cb186487?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MTA2&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   }, 
@@ -368,10 +350,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1505842465776-3b4953ca4f44?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MTIw&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -387,10 +368,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MTM0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -406,10 +386,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1523525748481-d2af2fc4a3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MTUx&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   },  
@@ -425,10 +404,9 @@
       "street": "Blvd Asen Yordanov",
       "streetNumber": "1"
     },
-    "performingArtists": ["Miro"],
     "imageUrl": "https://images.unsplash.com/photo-1506157999258-a35364384ce9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8ZmVzdGl2YWwsbXVzaWMtZmVzdGl2YWx8fHx8fHwxNzAwMDM1MTY0&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080",
     "ticketInfo": {
-      "purchaseOptions": "Online",
+      "purchaseOptions": ["Online"],
       "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
     }
   }
