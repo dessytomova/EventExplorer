@@ -32,7 +32,7 @@ const EventDetails = () => {
                     <Row>
                         <Col key={event._id} sm={12} md={12} lg={12} xl={12}>
                             <Card className={styles.card}>
-                                <Card.Img src={event.image} />
+                                <Card.Img src={event.imageUrl} />
                                 <Card.Body>
                                     <Card.Title>{event.name}</Card.Title>
                                     <Card.Text>

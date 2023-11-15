@@ -19,13 +19,13 @@ export const create = async (data) => {
         datetime: data.datetime, 
         host: data.host,
         address: {
-            country: data.country, 
-            city: data.city, 
-            street: data.street, 
-            streetNumber: data.streetNumber,
+            country: data.address.country, 
+            city: data.address.city, 
+            street: data.address.street, 
+            streetNumber: data.address.streetNumber,
         }, 
         performingArtists: data.performingArtists.split(',').map(element => element.trim()),
-        image: data.image
+        imageUrl: data.imageUrl
     }
 
     const response = await fetch(baseUrl, {

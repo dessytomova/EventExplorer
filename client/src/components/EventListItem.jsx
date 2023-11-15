@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const EventListItem = (
     {
     _id, 
-    image, 
+    imageUrl, 
     name, 
     description, 
     performingArtists, 
@@ -18,7 +18,7 @@ const EventListItem = (
 ) => {
     return (
         <Card style={{ width: '18rem' }} className={styles.card}>
-            <Card.Img variant="top" src={image}/>
+            <Card.Img variant="top" src={imageUrl}/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text className={styles.description}>

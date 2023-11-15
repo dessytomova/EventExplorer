@@ -17,7 +17,7 @@ const formInitialState = {
         streetNumber: '',
     },
     performingArtists: [],
-    image: '',
+    imageUrl: '',
 };
 
 const CreateEventForm = () => {
@@ -32,13 +32,10 @@ const CreateEventForm = () => {
         switch (e.target.type) {
             case 'number': value = Number(e.target.value);
                 break;
-            // case 'checkbox': value = e.target.checked;
-            //     break;
+
             default: value = e.target.value;
                 break;
         }
-        
-        console.log(name, value)
         
         if (['country', 'city', 'street', 'streetNumber'].includes(name)) {
             setFormValues((state) => ({
@@ -118,13 +115,13 @@ const CreateEventForm = () => {
                         />
                     </Form.Group>
 
-                    <Form.Group controlId="eventImage">
-                        <Form.Label>Image</Form.Label>
+                    <Form.Group controlId="eventImageUrl">
+                        <Form.Label>Image Url</Form.Label>
                         <Form.Control
                             type="text"
                             placeholder="Enter event image"
-                            name="image"
-                            value={formValues.image}
+                            name="imageUrl"
+                            value={formValues.imageUrl}
                             onChange={changeHandler}
                         />
                     </Form.Group>
