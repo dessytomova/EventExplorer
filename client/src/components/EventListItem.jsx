@@ -7,9 +7,7 @@ const EventListItem = (
     {
     _id, 
     imageUrl, 
-    name, 
-    description, 
-    performingArtists, 
+    name,  
     datetime, 
     host, 
     address, 
@@ -21,9 +19,6 @@ const EventListItem = (
             <Card.Img variant="top" src={imageUrl}/>
             <Card.Body>
                 <Card.Title>{name}</Card.Title>
-                <Card.Text className={styles.description}>
-                    {performingArtists.join(", ")}
-                </Card.Text>
             </Card.Body>
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>{formatDate(datetime)}</ListGroup.Item>

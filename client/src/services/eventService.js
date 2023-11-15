@@ -24,7 +24,6 @@ export const create = async (data) => {
             street: data.address.street, 
             streetNumber: data.address.streetNumber,
         }, 
-        performingArtists: data.performingArtists.split(',').map(element => element.trim()),
         imageUrl: data.imageUrl
     }
 

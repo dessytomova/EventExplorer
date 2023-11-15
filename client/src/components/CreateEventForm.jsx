@@ -16,7 +16,6 @@ const formInitialState = {
         street: '',
         streetNumber: '',
     },
-    performingArtists: [],
     imageUrl: '',
 };
 
@@ -28,7 +27,6 @@ const CreateEventForm = () => {
     const changeHandler = (e) => {
         let value = '';
         let name = e.target.name;
-
         switch (e.target.type) {
             case 'number': value = Number(e.target.value);
                 break;
@@ -51,6 +49,7 @@ const CreateEventForm = () => {
         }   
 
     }
+
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -166,19 +165,6 @@ const CreateEventForm = () => {
                             placeholder="Enter street number"
                             name="streetNumber"
                             value={formValues.address.streetNumber}
-                            onChange={changeHandler}
-                        />
-                    </Form.Group>
-
-
-                    <Form.Group controlId="eventPerformingArtists">
-                        <Form.Label>Performing Artists</Form.Label>
-                        <Form.Control
-                            as="textarea"
-                            rows={3}
-                            placeholder="Enter artists"
-                            name="performingArtists"
-                            value={formValues.performingArtists}
                             onChange={changeHandler}
                         />
                     </Form.Group>
