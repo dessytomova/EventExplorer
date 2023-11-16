@@ -14,7 +14,7 @@ function App() {
     <div>
       <Header />
 
-      <Container className="mt-4">
+      <Container className="mt-4 mb-4">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/events' element={<EventList />} />
@@ -23,7 +23,7 @@ function App() {
           <Route path='*' element={<NotFound />} />
         </Routes>
       </Container>
-      
+
       <Footer />
     </div>
 
