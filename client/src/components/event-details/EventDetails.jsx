@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import { Card, Col, Container, ListGroup, Row } from "react-bootstrap";
 import { useNavigate, useParams } from "react-router-dom";
-import { formatDate } from "../utils/dateUtils";
+import { formatDate } from "../../utils/dateUtils";
 import styles from './EventDetails.module.css';
-import * as  eventService from "../services/eventService";
+import * as  eventService from "../../services/eventService";
 
 const EventDetails = () => {
     const { id } = useParams();

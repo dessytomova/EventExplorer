@@ -1,5 +1,5 @@
 import { Button, Card, Container, ListGroup } from "react-bootstrap";
-import { formatDate } from "../utils/dateUtils";
+import { formatDate } from "../../../utils/dateUtils";
 import styles from './EventListItem.module.css';
 import { Link } from "react-router-dom";
 

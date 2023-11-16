@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import EventDetails from "./EventListItem";
-import * as  eventService from "../services/eventService";
+import EventDetails from "./event-list-item/EventListItem";
+import * as  eventService from "../../services/eventService";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);

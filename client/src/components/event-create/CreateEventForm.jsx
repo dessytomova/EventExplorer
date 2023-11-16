@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import * as  eventService from "../services/eventService";
+import * as  eventService from "../../services/eventService";
 import { useNavigate } from 'react-router-dom';
 
 const formInitialState = {
@@ -193,7 +193,7 @@ const CreateEventForm = () => {
                         />
                     </Form.Group>
                     <Form.Group controlId="price">
-                    <Form.Label>Price</Form.Label>
+                        <Form.Label>Price</Form.Label>
                         <Form.Control
                             type="number"
                             placeholder="Price"
@@ -201,7 +201,7 @@ const CreateEventForm = () => {
                             value={formValues.price}
                             onChange={changeHandler}
                         />
-                    </Form.Group>   
+                    </Form.Group>
                     <Form.Group controlId="purchaseLink">
                         <Form.Label>Purchase Link</Form.Label>
                         <Form.Control

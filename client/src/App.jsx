@@ -1,32 +1,31 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
-import NotFound from './components/NotFound';
-import Home from './components/Home';
-import EventList from './components/EventList';
-import EventDetails from './components/EventDetails';
-import CreateEventForm from './components/CreateEventForm';
 import { Route, Routes } from 'react-router-dom';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Home from './components/home/Home';
+import EventList from './components/event-list/EventList';
+import EventDetails from './components/event-details/EventDetails';
+import CreateEventForm from './components/event-create/CreateEventForm';
+import NotFound from './components/not-found/NotFound';
+import { Container } from 'react-bootstrap';
+
 
 function App() {
   return (
-    <>
-      {/* ======= Header ======= */}
+    <div>
       <Header />
 
-      {/* ======= Main Area ======= */}
-      {/* <main id="main">
-        <MainArea />
-      </main> */}
-      <Routes>
-        <Route path='/' element = {<Home />} />
-        <Route path='/events' element = {<EventList />} />
-        <Route path='/events/:id' element = {<EventDetails />} />
-        <Route path='/events/add' element = {<CreateEventForm />} />
-        <Route path='*' element = {<NotFound/>} />
-      </Routes>
-       {/* ======= Footer ======= */}
+      <Container className="mt-4">
+        <Routes>
+          <Route path='/' element={<Home />} />
+          <Route path='/events' element={<EventList />} />
+          <Route path='/events/:id' element={<EventDetails />} />
+          <Route path='/events/add' element={<CreateEventForm />} />
+          <Route path='*' element={<NotFound />} />
+        </Routes>
+      </Container>
+      
       <Footer />
-    </>
+    </div>
 
   );
 }
