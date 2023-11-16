@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import * as  eventService from "../../services/eventService";
@@ -74,8 +74,9 @@ const CreateEventForm = () => {
         <section>
             <Container>
                 <Form onSubmit={submitHandler}>
-                    <Form.Group controlId="eventName">
-                        <Form.Label>Name</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="eventName">
+                        <Form.Label column sm="2">Name</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event name"
@@ -83,10 +84,12 @@ const CreateEventForm = () => {
                             value={formValues.name}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventDescription">
-                        <Form.Label>Description</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="eventDescription">
+                        <Form.Label column sm="2">Description</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             as="textarea"
                             rows={3}
@@ -95,20 +98,24 @@ const CreateEventForm = () => {
                             value={formValues.description}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventDatetime">
-                        <Form.Label>Datetime</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="eventDatetime">
+                        <Form.Label column sm="2">Datetime</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="datetime-local"
                             name="datetime"
                             value={formValues.datetime}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventHost">
-                        <Form.Label>Host</Form.Label>
+                    <Form.Group as={Row} className="mb-3"  controlId="eventHost">
+                        <Form.Label column sm="2">Host</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event host"
@@ -116,10 +123,12 @@ const CreateEventForm = () => {
                             value={formValues.host}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventImageUrl">
-                        <Form.Label>Image Url</Form.Label>
+                    <Form.Group as={Row} className="mb-3"  controlId="eventImageUrl">
+                        <Form.Label column sm="2">Image Url</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event image"
@@ -127,10 +136,12 @@ const CreateEventForm = () => {
                             value={formValues.imageUrl}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventCountry">
-                        <Form.Label>Country</Form.Label>
+                    <Form.Group as={Row} className="mb-3"  controlId="eventCountry">
+                        <Form.Label column sm="2">Country</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event country"
@@ -138,10 +149,12 @@ const CreateEventForm = () => {
                             value={formValues.address.country}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="eventCity">
-                        <Form.Label>City</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="eventCity">
+                        <Form.Label column sm="2">City</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event city"
@@ -149,10 +162,12 @@ const CreateEventForm = () => {
                             value={formValues.address.city}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    {<Form.Group controlId="eventStreet">
-                        <Form.Label>Street</Form.Label>
+                    <Form.Group as={Row} className="mb-3"  controlId="eventStreet">
+                        <Form.Label column sm="2">Street</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter event street"
@@ -160,10 +175,12 @@ const CreateEventForm = () => {
                             value={formValues.address.street}
                             onChange={changeHandler}
                         />
-                    </Form.Group>}
+                        </Col>
+                    </Form.Group>
 
-                    <Form.Group controlId="eventStreetNum">
-                        <Form.Label>Street Number</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="eventStreetNum">
+                        <Form.Label column sm="2">Street Number</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter street number"
@@ -171,10 +188,12 @@ const CreateEventForm = () => {
                             value={formValues.address.streetNumber}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-                    <Form.Group controlId="purchaseOptions">
-                        <Form.Label>Purchase Options</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="purchaseOptions">
+                        <Form.Label column sm="2">Purchase Options</Form.Label>
+                        <Col sm="10">
                         <Form.Check
                             type="checkbox"
                             label="Online"
@@ -191,9 +210,11 @@ const CreateEventForm = () => {
                             onChange={changeHandler}
                             id="onGateCheckbox"
                         />
+                        </Col>
                     </Form.Group>
-                    <Form.Group controlId="price">
-                        <Form.Label>Price</Form.Label>
+                    <Form.Group as={Row} className="mb-3" controlId="price">
+                        <Form.Label column sm="2">Price</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="number"
                             placeholder="Price"
@@ -201,9 +222,11 @@ const CreateEventForm = () => {
                             value={formValues.price}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
-                    <Form.Group controlId="purchaseLink">
-                        <Form.Label>Purchase Link</Form.Label>
+                    <Form.Group as={Row} className="mb-3"  controlId="purchaseLink">
+                        <Form.Label column sm="2">Purchase Link</Form.Label>
+                        <Col sm="10">
                         <Form.Control
                             type="text"
                             placeholder="Enter purchase link"
@@ -211,15 +234,20 @@ const CreateEventForm = () => {
                             value={formValues.purchaseLink}
                             onChange={changeHandler}
                         />
+                        </Col>
                     </Form.Group>
 
-
+                    <Form.Group as={Row} className="mb-3" controlId="buttons">
+                    <Col sm="2">&nbsp;</Col>
+                    <Col sm="10">
                     <Button variant="danger" onClick={resetHandler}>
                         Reset
                     </Button>
                     <Button variant="primary" type="submit">
                         Create
                     </Button>
+                    </Col>
+                    </Form.Group>
                 </Form>
             </Container>
         </section>

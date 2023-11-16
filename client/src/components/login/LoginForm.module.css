@@ -1,0 +1,17 @@
+.login-form {
+    background-color: #EBFBFF;
+    padding: 40px 60px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .login-form {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .login-form {
+        padding: 15px 20px;
+    }
+}
