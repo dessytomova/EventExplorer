@@ -1,3 +1,99 @@
 .custom-body {
-    color: #4F555A;
+    color: #381010;
+    background-image: url("../src/assets/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
+
+.btn-primary { 
+    color: #ffffff; 
+    background-color: #591E1E; 
+    border-color: #591E1E; 
+  } 
+   
+  .btn-primary:hover, 
+  .btn-primary:focus, 
+  .btn-primary:active, 
+  .btn-primary.active, 
+  .open .dropdown-toggle.btn-primary { 
+    color: #ffffff; 
+    background-color: #591E1E; 
+    border-color: #591E1E; 
+  } 
+   
+  .btn-primary:active, 
+  .btn-primary.active, 
+  .open .dropdown-toggle.btn-primary { 
+    background-image: none; 
+  } 
+   
+  .btn-primary.disabled, 
+  .btn-primary[disabled], 
+  fieldset[disabled] .btn-primary, 
+  .btn-primary.disabled:hover, 
+  .btn-primary[disabled]:hover, 
+  fieldset[disabled] .btn-primary:hover, 
+  .btn-primary.disabled:focus, 
+  .btn-primary[disabled]:focus, 
+  fieldset[disabled] .btn-primary:focus, 
+  .btn-primary.disabled:active, 
+  .btn-primary[disabled]:active, 
+  fieldset[disabled] .btn-primary:active, 
+  .btn-primary.disabled.active, 
+  .btn-primary[disabled].active, 
+  fieldset[disabled] .btn-primary.active { 
+    background-color: #591E1E; 
+    border-color: #591E1E; 
+  } 
+   
+  .btn-primary .badge { 
+    color: #591E1E; 
+    background-color: #ffffff; 
+  }
+
+  .btn-danger { 
+    color: #ffffff; 
+    background-color: #381010; 
+    border-color: #381010; 
+  } 
+   
+  .btn-danger:hover, 
+  .btn-danger:focus, 
+  .btn-danger:active, 
+  .btn-danger.active, 
+  .open .dropdown-toggle.btn-danger { 
+    color: #ffffff; 
+    background-color:#381010; 
+    border-color:#381010; 
+  } 
+   
+  .btn-danger:active, 
+  .btn-danger.active, 
+  .open .dropdown-toggle.btn-danger { 
+    background-image: none; 
+  } 
+   
+  .btn-danger.disabled, 
+  .btn-danger[disabled], 
+  fieldset[disabled] .btn-danger, 
+  .btn-danger.disabled:hover, 
+  .btn-danger[disabled]:hover, 
+  fieldset[disabled] .btn-danger:hover, 
+  .btn-danger.disabled:focus, 
+  .btn-danger[disabled]:focus, 
+  fieldset[disabled] .btn-danger:focus, 
+  .btn-danger.disabled:active, 
+  .btn-danger[disabled]:active, 
+  fieldset[disabled] .btn-danger:active, 
+  .btn-danger.disabled.active, 
+  .btn-danger[disabled].active, 
+  fieldset[disabled] .btn-danger.active { 
+    background-color:#381010; 
+    border-color:#381010; 
+  } 
+   
+  .btn-danger .badge { 
+    color: #381010; 
+    background-color: #ffffff; 
+  }

@@ -1,9 +1,13 @@
-.card a {
-    text-decoration: none;
-    color: #009FFF;
+.card-item{
+    width: '18rem';
 }
 
-.card img {
+.card-item a {
+    text-decoration: none;
+    color: #8C4227;
+}
+
+.card-item img {
     height: auto;
     width: auto;
     max-height: 200px;

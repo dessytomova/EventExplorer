@@ -8,6 +8,7 @@ import CreateEventForm from './components/event-create/CreateEventForm';
 import LoginForm from './components/login/LoginForm';
 import NotFound from './components/not-found/NotFound';
 import { Container } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css'
 import '../public/styles.css'; 
 
 

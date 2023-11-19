@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
 import EventDetails from "./event-list-item/EventListItem";
 import * as  eventService from "../../services/eventService";
+import styles from './EventList.module.css';
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
-    
+
     useEffect(() => {
         const abortController = new AbortController();
 
@@ -21,15 +21,13 @@ const EventList = () => {
     return (
         <>
             <section>
-                <Container>
-                    <Row>
-                        {events.map(event => (
-                            <Col key={event._id} sm={12} md={6} lg={3} xl={3}>
-                                <EventDetails {...event} />
-                            </Col>
-                        ))}
-                    </Row>
-                </Container>
+                <div className={styles['event-container']}>
+                    {events.map((event) => (
+                        <div key={event._id} className={styles['event-card']}>
+                            <EventDetails {...event} />
+                        </div>
+                    ))}
+                </div>
             </section>
         </>
     );

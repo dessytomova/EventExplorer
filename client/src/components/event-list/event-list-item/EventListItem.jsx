@@ -15,10 +15,12 @@ const EventListItem = (
     }
 ) => {
     return (
-        <Card style={{ width: '18rem' }} className={styles.card}>
+        <Card className={styles['card-item']}>
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
-                <Card.Title>{name}</Card.Title>
+                <Card.Title>
+                    <Card.Link as={Link} to={`/events/${_id}`}>{name}</Card.Link>
+                </Card.Title>
             </Card.Body>
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>{formatDate(datetime)}</ListGroup.Item>
