@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import EventDetails from "./event-list-item/EventListItem";
+import EventListItem from "./event-list-item/EventListItem";
 import * as  eventService from "../../services/eventService";
 import styles from './EventList.module.css';
 
@@ -24,7 +24,7 @@ const EventList = () => {
                 <div className={styles['event-container']}>
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
-                            <EventDetails {...event} />
+                            <EventListItem {...event} />
                         </div>
                     ))}
                 </div>
