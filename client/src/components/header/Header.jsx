@@ -7,7 +7,7 @@ const Header = () => {
             <header id="header">
                 <Navbar expand="lg" className="bg-body-tertiary" fluid data-bs-theme="dark">
                     <Container>
-                        <Navbar.Brand as={Link} to="/">EventExplorer</Navbar.Brand>
+                        <Navbar.Brand as={Link} to="/">EventsExplorer</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">

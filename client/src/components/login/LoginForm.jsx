@@ -29,7 +29,7 @@ const LoginForm = () => {
 
     return (
         <section className={styles['login-form']}>
-            <h3 className="text-center mb-4">Login to EventExplorer</h3>
+            <h3 className="text-center mb-4">Login to EventsExplorer</h3>
             <Form onSubmit={submitHandler}>
                 <Form.Group as={Row} className="mb-3" controlId="username">
                     <Form.Label column sm="4">Username:</Form.Label>

@@ -1,1 +1,1 @@
-# EventExplorer
+# EventsExplorer
