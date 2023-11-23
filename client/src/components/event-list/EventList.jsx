@@ -7,15 +7,9 @@ const EventList = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        const abortController = new AbortController();
-
         eventService
-            .getAll({ signal: abortController.signal })
+            .getAll()
             .then(result => setEvents(result));
-
-        return () => {
-            abortController.abort();
-        }
     }, []);
 
     return (

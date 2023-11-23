@@ -11,18 +11,12 @@ const EventDetails = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        const abortController = new AbortController();  // on unmount to abort the fetch
-
         eventService
-            .getOne(id, { signal: abortController.signal })
+            .getOne(id)
             .then(setEvent)
             .catch((err) => {
                 navigate('/events');
             });
-
-        return () => {
-            abortController.abort();
-        }
     }, [id]);
 
     return (
