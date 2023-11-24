@@ -1,45 +1,38 @@
-import { useState } from "react";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Col, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import styles from './LoginForm.module.css';
+import useForm from "../../hooks/useFormHook";
+import * as authService from "../../services/authService";
 
 
 const formInitialState = {
-    username: '',
+    email: '',
     password: '',
 };
 
 
 const LoginForm = () => {
-    const [formValues, setFormValues] = useState(formInitialState);
+   
+    const submitHandler = async () => {
 
-    const changeHandler = (e) => {
-        const name = e.target.name;
-        const value = e.target.value;
-
-        setFormValues(state => ({ ...state, [name]: value }));
-
-    }
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-        //TODO add logic to check login
-        console.log(formValues)
-    }
+        const result = await authService.login(values.email,values.password);
+        console.log(result)
+    } 
+    const {values,onChange,onSubmit} = useForm(submitHandler, formInitialState);
 
     return (
         <section className={styles['login-form']}>
             <h3 className="text-center mb-4">Login to EventsExplorer</h3>
-            <Form onSubmit={submitHandler}>
-                <Form.Group as={Row} className="mb-3" controlId="username">
-                    <Form.Label column sm="4">Username:</Form.Label>
+            <Form onSubmit={onSubmit}>
+                <Form.Group as={Row} className="mb-3" controlId="email">
+                    <Form.Label column sm="4">Email:</Form.Label>
                     <Col sm="8">
                         <Form.Control
                             type="text"
-                            placeholder="Username"
-                            name="username"
-                            value={formValues.username}
-                            onChange={changeHandler}
+                            placeholder="email"
+                            name="email"
+                            value={values.email}
+                            onChange={onChange}
                         />
                     </Col>
                 </Form.Group>
@@ -51,8 +44,8 @@ const LoginForm = () => {
                             type="password"
                             placeholder="Password"
                             name="password"
-                            value={formValues.password}
-                            onChange={changeHandler}
+                            value={values.password}
+                            onChange={onChange}
                         />
                     </Col>
                 </Form.Group>
