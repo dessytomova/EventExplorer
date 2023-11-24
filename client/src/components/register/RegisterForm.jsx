@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import styles from './RegisterForm.module.css';
 import useForm from "../../hooks/useFormHook";
 import * as authService from "../../services/authService";
+import { useContext } from "react";
+import AuthContext from "../../context/authContext";
 
 
 const RegisterFormKeys= {
@@ -12,13 +14,9 @@ const RegisterFormKeys= {
 }
 
 const RegisterForm = () => {
-   
-    const submitHandler = async () => {
 
-        const result = await authService.register(values[RegisterFormKeys.Email],values[RegisterFormKeys.Password]);
-        console.log(result)
-    } 
-    const {values,onChange,onSubmit} = useForm(submitHandler, {
+    const {registerSubmitHandler} = useContext(AuthContext);
+    const {values,onChange,onSubmit} = useForm(registerSubmitHandler, {
         [RegisterFormKeys.Email]: '', 
         [RegisterFormKeys.Password]: '', 
         [RegisterFormKeys.ConfirmPassword]: '', 
