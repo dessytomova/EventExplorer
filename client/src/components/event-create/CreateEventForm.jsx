@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import * as  eventService from "../../services/eventService";
 import { useNavigate } from 'react-router-dom';
 import styles from './CreateEventForm.module.css';
+import useForm from '../../hooks/useFormHook';
 
 const formInitialState = {
     name: '',
@@ -25,57 +26,21 @@ const formInitialState = {
 };
 
 const CreateEventForm = () => {
-
-    const [formValues, setFormValues] = useState(formInitialState);
     const navigate = useNavigate();
 
-    const changeHandler = (e) => {
-        let value = '';
-        let name = e.target.name;
-        switch (e.target.type) {
-            case 'number': value = Number(e.target.value);
-                break;
-            case 'checkbox': value = e.target.checked;
-                break;
-            default: value = e.target.value;
-                break;
-        }
-
-        if (['country', 'city', 'street', 'streetNumber'].includes(name)) {
-            setFormValues((state) => ({
-                ...state,
-                address: {
-                    ...state.address,
-                    [name]: value,
-                },
-            }));
-        } else {
-            setFormValues(state => ({ ...state, [name]: value }));
-
-        }
-
-    }
-
-
-    const submitHandler = (e) => {
-        e.preventDefault();
-        eventService.create(formValues);
-        resetHandler();
+    const submitHandler = (data) => {
+        eventService.create(data);
         navigate('/events');
-
     };
 
-    const resetHandler = () => {
-        setFormValues(formInitialState);
-    }
-
+    const { values, onChange, onReset, onSubmit } = useForm(submitHandler, formInitialState);
 
     return (
         <section className={styles['add-event-form']}>
             <h3 className="text-center mb-4">Add New Event</h3>
             <section>
                 <Container>
-                    <Form onSubmit={submitHandler}>
+                    <Form onSubmit={onSubmit}>
                         <Form.Group as={Row} className="mb-3" controlId="eventName">
                             <Form.Label column sm="2">Name</Form.Label>
                             <Col sm="10">
@@ -83,8 +48,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event name"
                                     name="name"
-                                    value={formValues.name}
-                                    onChange={changeHandler}
+                                    value={values.name}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -97,8 +62,8 @@ const CreateEventForm = () => {
                                     rows={3}
                                     placeholder="Enter event description"
                                     name="description"
-                                    value={formValues.description}
-                                    onChange={changeHandler}
+                                    value={values.description}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -109,8 +74,8 @@ const CreateEventForm = () => {
                                 <Form.Control
                                     type="datetime-local"
                                     name="datetime"
-                                    value={formValues.datetime}
-                                    onChange={changeHandler}
+                                    value={values.datetime}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -122,8 +87,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event host"
                                     name="host"
-                                    value={formValues.host}
-                                    onChange={changeHandler}
+                                    value={values.host}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -135,8 +100,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event image"
                                     name="imageUrl"
-                                    value={formValues.imageUrl}
-                                    onChange={changeHandler}
+                                    value={values.imageUrl}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -148,8 +113,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event country"
                                     name="country"
-                                    value={formValues.address.country}
-                                    onChange={changeHandler}
+                                    value={values.country}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -161,8 +126,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event city"
                                     name="city"
-                                    value={formValues.address.city}
-                                    onChange={changeHandler}
+                                    value={values.city}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -174,8 +139,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter event street"
                                     name="street"
-                                    value={formValues.address.street}
-                                    onChange={changeHandler}
+                                    value={values.street}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -187,8 +152,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter street number"
                                     name="streetNumber"
-                                    value={formValues.address.streetNumber}
-                                    onChange={changeHandler}
+                                    value={values.streetNumber}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -200,16 +165,16 @@ const CreateEventForm = () => {
                                     type="checkbox"
                                     label="Online"
                                     name="online"
-                                    checked={formValues.online}
-                                    onChange={changeHandler}
+                                    checked={values.online}
+                                    onChange={onChange}
                                     id="onlineCheckbox"
                                 />
                                 <Form.Check
                                     type="checkbox"
                                     label="On Gate"
                                     name="onGate"
-                                    checked={formValues.onGate}
-                                    onChange={changeHandler}
+                                    checked={values.onGate}
+                                    onChange={onChange}
                                     id="onGateCheckbox"
                                 />
                             </Col>
@@ -221,8 +186,8 @@ const CreateEventForm = () => {
                                     type="number"
                                     placeholder="Price"
                                     name="price"
-                                    value={formValues.price}
-                                    onChange={changeHandler}
+                                    value={values.price}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -233,8 +198,8 @@ const CreateEventForm = () => {
                                     type="text"
                                     placeholder="Enter purchase link"
                                     name="purchaseLink"
-                                    value={formValues.purchaseLink}
-                                    onChange={changeHandler}
+                                    value={values.purchaseLink}
+                                    onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
@@ -242,7 +207,7 @@ const CreateEventForm = () => {
                         <Form.Group as={Row} className="mb-3" controlId="buttons">
                             <Col sm="2">&nbsp;</Col>
                             <Col sm="10">
-                                <Button variant="danger" onClick={resetHandler}>
+                                <Button variant="danger" onClick={onReset}>
                                     Reset
                                 </Button>
                                 <Button variant="primary" type="submit">

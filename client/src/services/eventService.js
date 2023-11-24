@@ -18,10 +18,10 @@ export const create = async (data) => {
         datetime: data.datetime,
         host: data.host,
         address: {
-            country: data.address.country,
-            city: data.address.city,
-            street: data.address.street,
-            streetNumber: data.address.streetNumber,
+            country: data.country,
+            city: data.city,
+            street: data.street,
+            streetNumber: data.streetNumber,
         },
         imageUrl: data.imageUrl,
         ticketInfo: {
