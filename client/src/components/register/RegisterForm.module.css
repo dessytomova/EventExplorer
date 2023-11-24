@@ -1,0 +1,20 @@
+.register-form {
+    background-color: #F2C894;
+    padding: 40px 60px;
+    border-radius: 4px;
+    max-width: 35%;
+    margin:auto;
+
+}
+
+@media (max-width: 768px) {
+    .register-form {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .register-form {
+        padding: 15px 20px;
+    }
+}

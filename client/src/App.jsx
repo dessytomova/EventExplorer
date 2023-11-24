@@ -10,6 +10,7 @@ import NotFound from './components/not-found/NotFound';
 import { Container } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css'; 
+import RegisterForm from './components/register/RegisterForm';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<LoginForm />} />
+          <Route path='/register' element={<RegisterForm />} />
           <Route path='/events' element={<EventList />} />
           <Route path='/events/:id' element={<EventDetails />} />
           <Route path='/events/add' element={<CreateEventForm />} />

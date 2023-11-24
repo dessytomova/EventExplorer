@@ -1,30 +1,32 @@
 import { Button, Col, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
-import styles from './LoginForm.module.css';
+import styles from './RegisterForm.module.css';
 import useForm from "../../hooks/useFormHook";
 import * as authService from "../../services/authService";
 
 
-const LoginFormKeys= {
+const RegisterFormKeys= {
     Email:'email', 
-    Password:'password'
+    Password:'password', 
+    ConfirmPassword: 'confirm-password'
 }
 
-const LoginForm = () => {
+const RegisterForm = () => {
    
     const submitHandler = async () => {
 
-        const result = await authService.login(values[LoginFormKeys.Email],values[LoginFormKeys.Password]);
+        const result = await authService.register(values[RegisterFormKeys.Email],values[RegisterFormKeys.Password]);
         console.log(result)
     } 
-    const {values,onChange, onSubmit} = useForm(submitHandler,  {
-        [LoginFormKeys.Email]: '', 
-        [LoginFormKeys.Password]: '', 
+    const {values,onChange,onSubmit} = useForm(submitHandler, {
+        [RegisterFormKeys.Email]: '', 
+        [RegisterFormKeys.Password]: '', 
+        [RegisterFormKeys.ConfirmPassword]: '', 
     });
 
     return (
-        <section className={styles['login-form']}>
-            <h3 className="text-center mb-4">Login to EventsExplorer</h3>
+        <section className={styles['register-form']}>
+            <h3 className="text-center mb-4">Register to EventsExplorer</h3>
             <Form onSubmit={onSubmit}>
                 <Form.Group as={Row} className="mb-3" controlId="email">
                     <Form.Label column sm="4">Email:</Form.Label>
@@ -33,7 +35,7 @@ const LoginForm = () => {
                             type="text"
                             placeholder="Email"
                             name="email"
-                            value={values[LoginFormKeys.Email]}
+                            value={values[RegisterFormKeys.Email]}
                             onChange={onChange}
                         />
                     </Col>
@@ -46,7 +48,20 @@ const LoginForm = () => {
                             type="password"
                             placeholder="Password"
                             name="password"
-                            value={values[LoginFormKeys.Password]}
+                            value={values[RegisterFormKeys.Password]}
+                            onChange={onChange}
+                        />
+                    </Col>
+                </Form.Group>
+
+                <Form.Group as={Row} className="mb-3" controlId="confirm-password">
+                    <Form.Label column sm="4">Confirm Password:</Form.Label>
+                    <Col sm="8">
+                        <Form.Control
+                            type="password"
+                            placeholder="Confirm Password"
+                            name="confirm-password"
+                            value={values[RegisterFormKeys.ConfirmPassword]}
                             onChange={onChange}
                         />
                     </Col>
@@ -56,7 +71,7 @@ const LoginForm = () => {
                     <Col sm="4">&nbsp;</Col>
                     <Col sm="8">
                         <Button type="submit"  variant="primary">
-                            Login
+                            Register
                         </Button>
                     </Col>
                 </Form.Group>
@@ -66,4 +81,4 @@ const LoginForm = () => {
     );
 }
 
-export default LoginForm;
+export default RegisterForm;
