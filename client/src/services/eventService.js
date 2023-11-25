@@ -1,10 +1,10 @@
 import * as request from "../lib/request";
 
-const baseUrl = 'http://localhost:3030/jsonstore/events';
+const baseUrl = 'http://localhost:3030/data/events';
 
 export const getAll = async () => {
     const data = await request.get(baseUrl);
-    return Object.values(data);
+    return data;
 };
 
 export const getOne = async (id) => {

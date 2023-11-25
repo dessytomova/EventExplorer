@@ -1339,7 +1339,72 @@
     	sessions: {
     	}
     };
-    var seedData = {};
+    var seedData = {
+        events: {
+            "3151c2b3-320c-4c4a-bb3a-d2ee8f64d1d1": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Metal Legends VIO-LENCE for the First Time in Bulgaria.",
+                "description": "With great pleasure, BGTSC invites the cult thrash brigade VIO-LENCE for its first concert in Bulgaria next year. If we have to describe VIO-LENCE in one word, it's 'legendary'! The classics from the Bay Area in San Francisco are among the leaders of the second wave of American thrash metal from the latter half of the 80s. It is an honor for us to announce their concert on March 29th at Mixtape 5 club",
+                "datetime": "2024-03-29T22:00",
+                "host": "Mixtape 5",
+                "address": {
+                    "country": "BG",
+                    "city": "Sofia",
+                    "street": "Blvd. Cherni vrah",
+                    "streetNumber": "1142"
+                },
+                "imageUrl": "https://metalhangar18.com/wp/ups/2020/08/violence-photo.jpg",
+                "ticketInfo": {
+                    "purchaseOptions": [],
+                    "purchaseLink": "https://www.eventim.bg/bg/bileti/vio-lence-sofia-club-mixtape-5-1381811/performance.html",
+                    "price": 40
+                },
+                "_createdOn": 1700916465177
+            },
+            "d7b319cd-fe3d-432f-ae71-c8650e013e61": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Best of Miro",
+                "description": "THE GRAND FINALE",
+                "datetime": "2024-04-17T20:00",
+                "host": "Arena Sofia",
+                "address": {
+                    "country": "BG",
+                    "city": "Sofia",
+                    "street": "Blvd Asen Yordanov",
+                    "streetNumber": "1"
+                },
+                "imageUrl": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "ticketInfo": {
+                    "purchaseOptions": [
+                        "Online"
+                    ],
+                    "purchaseLink": "https://www.eventim.bg/bg/bileti/best-of-miro-the-grand-finale-sofia-sports-hall-arena-sofia-624371/event.html"
+                },
+                "_createdOn": 1700917263567
+            }, 
+            "ef57e8c3-7418-404b-9cf0-7b3c495b0150":{
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Midalidare Rock In The Wine Valley 2024",
+                "description": "Midalidare Rock In The Wine Valley 2024 will take place between July 12th and 14th. The first headliner for 2024 is the legendary Deep Purple, who will perform on July 14th, Sunday.",
+                "datetime": "2024-07-14T07:22:00.358Z",
+                "host": "Midalidare Estate",
+                "address": {
+                "country": "BG",
+                "city": "Mogilovo",
+                "streetNumber": "6239"
+                },
+                "imageUrl": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
+                "ticketInfo": {
+                "purchaseOptions": ["Online"], 
+                "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
+                },
+                "_createdOn": 1700917263567
+            }
+        },
+        comments: {
+        
+        }, 
+    };
     var rules$1 = {
     	users: {
     		".create": false,
