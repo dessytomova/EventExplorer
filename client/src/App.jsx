@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
@@ -8,55 +8,18 @@ import CreateEventForm from './components/event-create/CreateEventForm';
 import LoginForm from './components/login/LoginForm';
 import NotFound from './components/not-found/NotFound';
 import { Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles.css';
 import RegisterForm from './components/register/RegisterForm';
 import Logout from './components/logout/Logout';
-import AuthContext from './context/authContext';
-import { useState } from 'react';
-import * as authService from './services/authService';
+import {AuthProvider} from './context/authContext';
 import Path from './paths';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles.css';
 
 
 function App() {
-  const navigate = useNavigate();
-  const [auth, setAuth] = useState(() => {
-    localStorage.removeItem('accessToken');
-
-    return {};
-});
-
-  const loginSubmitHandler = async (values) => {
-    const result = await authService.login(values.email, values.password);
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-    navigate(Path.Home);
-  };
-
-  const registerSubmitHandler = async (values) => {
-    const result = await authService.register(values.email, values.password);
-    setAuth(result);
-    localStorage.setItem('accessToken', result.accessToken);
-    navigate(Path.Home);
-  };
-
-  const logoutHandler = () => {
-    setAuth({});
-
-    localStorage.removeItem('accessToken');
-};
-
-   const values = {
-    loginSubmitHandler,
-    registerSubmitHandler,
-    logoutHandler,
-    username: auth.email,
-    email: auth.email,
-    isAuthenticated: !!auth.email
-  }
 
   return (
-    <AuthContext.Provider value={values}>
+    <AuthProvider>
       <div className="d-flex flex-column min-vh-100 custom-body">
         <Header />
 
@@ -74,7 +37,7 @@ function App() {
         </Container>
         <Footer />
       </div>
-    </AuthContext.Provider>
+    </AuthProvider>
 
   );
 }
