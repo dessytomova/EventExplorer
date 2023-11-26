@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -12,12 +11,10 @@ const formInitialState = {
     description: '',
     datetime: '',
     host: '',
-    address: {
-        country: '',
-        city: '',
-        street: '',
-        streetNumber: '',
-    },
+    country: '',
+    city: '',
+    street: '',
+    streetNumber: '',
     imageUrl: '',
     online: false,
     onGate: false,
