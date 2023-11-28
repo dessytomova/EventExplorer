@@ -16,6 +16,7 @@ import Path from './paths';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css';
 import ErrorBoundary from './components/ErrorBoundary';
+import AuthGuard from './components/AuthGuard';
 
 
 
@@ -34,9 +35,15 @@ function App() {
             <Route path={Path.Register} element={<RegisterForm />} />
             <Route path={Path.Events} element={<EventList />} />
             <Route path={Path.Events + '/:id'} element={<EventDetails />} />
-            <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
-            <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
-            <Route path={Path.Logout} element={<Logout />} />
+            
+            <Route element={<AuthGuard/>}>
+              <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
+              <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
+              <Route path={Path.Logout} element={<Logout />} />
+            </Route>
+
+
+
             <Route path='*' element={<NotFound />} />
           </Routes>
         </Container>
