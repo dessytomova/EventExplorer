@@ -15,12 +15,14 @@ import {AuthProvider} from './context/authContext';
 import Path from './paths';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css';
+import ErrorBoundary from './components/ErrorBoundary';
 
 
 
 function App() {
 
   return (
+    <ErrorBoundary>
     <AuthProvider>
       <div className="d-flex flex-column min-vh-100 custom-body">
         <Header />
@@ -41,6 +43,7 @@ function App() {
         <Footer />
       </div>
     </AuthProvider>
+    </ErrorBoundary>
 
   );
 }

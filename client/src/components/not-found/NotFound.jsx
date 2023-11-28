@@ -1,17 +1,18 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import styles from './NotFound.module.css';
 
 const NotFound = () => {
     return (
       <>
-        <section className="text-center">
+        <section  className={styles['not-found']}>
           <Container>
             <Row>
               <Col>
-                <h1 className="display-1">404</h1>
-                <p className="lead">Oops! Page not found.</p>
+                <h1>404</h1>
+                <p>Oops! Page not found.</p>
                 <Link to="/">
-                  <Button variant="secondary">Go to Home</Button>
+                  <Button>Go to Home</Button>
                 </Link>
               </Col>
             </Row>
