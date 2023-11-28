@@ -2,6 +2,8 @@ import { Button, Card, Container, ListGroup } from "react-bootstrap";
 import { formatDate } from "../../../utils/dateUtils";
 import styles from './EventListItem.module.css';
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import AuthContext from "../../../context/authContext";
 
 const EventListItem = (
     {
@@ -11,15 +13,18 @@ const EventListItem = (
         datetime,
         host,
         address,
-        ticketInfo
+        ticketInfo,
+        _ownerId
     }
 ) => {
+    const { userId } = useContext(AuthContext);
     return (
         <Card className={styles['card-item']}>
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>
                     <Card.Link as={Link} to={`/events/${_id}`}>{name}</Card.Link>
+
                 </Card.Title>
             </Card.Body>
             <ListGroup className="list-group-flush">
@@ -41,8 +46,15 @@ const EventListItem = (
                 )}
             </ListGroup>
             <Card.Body>
-                {/* <Card.Link href="#">Another Link</Card.Link> */}
                 <Card.Link as={Link} to={`/events/${_id}`}>Details</Card.Link>
+                {
+                    _ownerId === userId && (
+                        <>
+                            <Card.Link as={Link} to={`/events/${_id}/edit`}>Edit</Card.Link>
+                            <Card.Link href="#">Delete</Card.Link>
+                        </>
+                    )
+                }
             </Card.Body>
         </Card>
     );

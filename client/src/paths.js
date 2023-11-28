@@ -2,7 +2,7 @@ const Path = {
     Home: '/',
     Login: '/login',
     Register: '/register',
-    Events: '/events', 
+    Events: '/events',
     Logout: '/logout'
 };
 

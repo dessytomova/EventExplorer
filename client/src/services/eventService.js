@@ -11,8 +11,8 @@ export const getOne = async (id) => {
     return await request.get(`${baseUrl}/${id}`);
 };
 
-export const create = async (data) => {
-    const body = {
+const buildRequestBody = (data) => {
+    return {
         name: data.name,
         description: data.description,
         datetime: data.datetime,
@@ -30,6 +30,10 @@ export const create = async (data) => {
         }
     }
 
+}
+export const create = async (data) => {
+    const body = buildRequestBody(data);
+
     if (data.online) body.ticketInfo.purchaseOptions.push('Online');
     if (data.onGate) body.ticketInfo.purchaseOptions.push('On Gate');
     if (data.price) body.ticketInfo.price = data.price;
@@ -37,3 +41,14 @@ export const create = async (data) => {
     const response = await request.post(baseUrl, body);
     return await response;
 };
+
+export const edit = async (id, data) => {
+    const body = buildRequestBody(data);
+
+    if (data.online) body.ticketInfo.purchaseOptions.push('Online');
+    if (data.onGate) body.ticketInfo.purchaseOptions.push('On Gate');
+    if (data.price) body.ticketInfo.price = data.price;
+
+    const result = await request.put(`${baseUrl}/${id}`, body);
+    return result;
+}

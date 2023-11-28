@@ -1,0 +1,19 @@
+.edit-event-form {
+    background-color: #EECE91;
+    padding: 40px 60px;
+    border-radius: 4px;
+    max-width: 70%;
+    margin:auto;
+}
+
+@media (max-width: 768px) {
+    .edit-event-form {
+        padding: 20px 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .edit-event-form {
+        padding: 15px 20px;
+    }
+}

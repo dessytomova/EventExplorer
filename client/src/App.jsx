@@ -4,6 +4,7 @@ import Footer from './components/footer/Footer';
 import Home from './components/home/Home';
 import EventList from './components/event-list/EventList';
 import EventDetails from './components/event-details/EventDetails';
+import EditEventForm from './components/event-edit/EventEditForm';
 import CreateEventForm from './components/event-create/CreateEventForm';
 import LoginForm from './components/login/LoginForm';
 import NotFound from './components/not-found/NotFound';
@@ -14,6 +15,7 @@ import {AuthProvider} from './context/authContext';
 import Path from './paths';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css';
+
 
 
 function App() {
@@ -31,6 +33,7 @@ function App() {
             <Route path={Path.Events} element={<EventList />} />
             <Route path={Path.Events + '/:id'} element={<EventDetails />} />
             <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
+            <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
             <Route path={Path.Logout} element={<Logout />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
