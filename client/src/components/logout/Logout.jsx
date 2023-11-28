@@ -16,7 +16,7 @@ const Logout = () => {
                 navigate(Path.Home);
             })
             .catch((e) => {
-                console.log(e)
+                logoutHandler();
                 navigate(Path.Home);
             });
     }, []);
