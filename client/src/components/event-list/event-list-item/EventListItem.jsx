@@ -14,7 +14,8 @@ const EventListItem = (
         host,
         address,
         ticketInfo,
-        _ownerId
+        _ownerId,
+        onDeleteButtonClick
     }
 ) => {
     const { userId } = useContext(AuthContext);
@@ -51,7 +52,7 @@ const EventListItem = (
                     _ownerId === userId && (
                         <>
                             <Card.Link as={Link} to={`/events/${_id}/edit`}>Edit</Card.Link>
-                            <Card.Link href="#">Delete</Card.Link>
+                            <Card.Link onClick={() => onDeleteButtonClick({ _id, name })}>Delete</Card.Link>
                         </>
                     )
                 }

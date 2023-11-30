@@ -52,3 +52,5 @@ export const edit = async (id, data) => {
     const result = await request.put(`${baseUrl}/${id}`, body);
     return result;
 }
+
+export const remove = async (id) => await request.del(`${baseUrl}/${id}`);

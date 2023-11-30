@@ -204,11 +204,11 @@ const CreateEventForm = () => {
                         <Form.Group as={Row} className="mb-3" controlId="buttons">
                             <Col sm="2">&nbsp;</Col>
                             <Col sm="10">
-                                <Button variant="danger" onClick={onReset}>
-                                    Reset
-                                </Button>
                                 <Button variant="primary" type="submit">
                                     Create
+                                </Button>
+                                <Button variant="danger" onClick={onReset}>
+                                    Reset
                                 </Button>
                             </Col>
                         </Form.Group>
