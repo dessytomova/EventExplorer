@@ -1,4 +1,4 @@
-.card-item{
+.card-item {
     width: '18rem';
 }
 
@@ -12,4 +12,18 @@
     width: auto;
     max-height: 200px;
     object-fit: cover;
+}
+
+.card-body-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-links {
+    display: flex;
+}
+
+.card-links a {
+    margin-left: 10px;
 }

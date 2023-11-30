@@ -46,14 +46,14 @@ const EventListItem = (
                     </ListGroup.Item>
                 )}
             </ListGroup>
-            <Card.Body>
+            <Card.Body className={styles['card-body-container']}>
                 <Card.Link as={Link} to={`/events/${_id}`}>Details</Card.Link>
                 {
                     _ownerId === userId && (
-                        <>
+                        <div className="card-links">
                             <Card.Link as={Link} to={`/events/${_id}/edit`}>Edit</Card.Link>
                             <Card.Link onClick={() => onDeleteButtonClick({ _id, name })}>Delete</Card.Link>
-                        </>
+                        </div>
                     )
                 }
             </Card.Body>
