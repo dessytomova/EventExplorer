@@ -7,6 +7,7 @@ import styles from './EventEditForm.module.css';
 import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../paths';
+import SomethingWrong from "../something-wrong/SomethingWrong";
 
 const initialState = {
     name: '',
@@ -27,6 +28,7 @@ const initialState = {
 const EditEventForm = () => {
     const { id } = useParams();
     const [values, setValues] = useState(initialState);
+    const [hasError, setHasError] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -46,7 +48,7 @@ const EditEventForm = () => {
                     price:data?.ticketInfo?.price, 
                 })
             })
-            .catch(e => console.log(e))
+            .catch(e => setHasError(true))
     }, [id]);
 
 
@@ -54,11 +56,11 @@ const EditEventForm = () => {
     const editEventSubmitHandler = async (e) => {
         e.preventDefault();
         
-        try {
+        try{
             await eventService.edit(id, values);
             navigate(Path.Events)
         } catch (error) {
-            console.log(error);
+            setHasError(true);
         }
     }
 
@@ -78,7 +80,7 @@ const EditEventForm = () => {
         setValues(state => ({ ...state, [name]: value }));
     }
 
-
+    if (hasError) return <SomethingWrong />
     return (
         <section className={styles['edit-event-form']}>
             <h3 className="text-center mb-4">Edit</h3>

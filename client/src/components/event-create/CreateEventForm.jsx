@@ -5,6 +5,8 @@ import * as  eventService from "../../services/eventService";
 import { useNavigate } from 'react-router-dom';
 import styles from './CreateEventForm.module.css';
 import useForm from '../../hooks/useFormHook';
+import SomethingWrong from "../something-wrong/SomethingWrong";
+import { useState } from 'react';
 
 const formInitialState = {
     name: '',
@@ -24,14 +26,20 @@ const formInitialState = {
 
 const CreateEventForm = () => {
     const navigate = useNavigate();
+    const [hasError, setHasError] = useState(false);
 
-    const submitHandler = (data) => {
-        eventService.create(data);
-        navigate('/events');
+    const submitHandler = async (data) => {
+        try {
+            await eventService.create(data);
+            navigate('/events');
+        } catch (error) {
+            setHasError(true);
+        }
     };
 
     const { values, onChange, onReset, onSubmit } = useForm(submitHandler, formInitialState);
-
+    
+    if (hasError) return <SomethingWrong />
     return (
         <section className={styles['add-event-form']}>
             <h3 className="text-center mb-4">Add New Event</h3>

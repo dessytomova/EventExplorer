@@ -3,16 +3,19 @@ import EventListItem from "./event-list-item/EventListItem";
 import * as  eventService from "../../services/eventService";
 import styles from './EventList.module.css';
 import DeleteEventModal from "../event-delete/DeleteEventModal";
+import SomethingWrong from "../something-wrong/SomethingWrong";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState({});
+    const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
         eventService
             .getAll()
-            .then(result => setEvents(result));
+            .then(result => setEvents(result))
+            .catch(e => setHasError(true));
     }, []);
 
     const onDeleteButtonClick = (event) => {
@@ -21,11 +24,18 @@ const EventList = () => {
     }
 
     const deleteUserHandler = async () => {
-        await eventService.remove(selectedEvent._id);
+        try {
+            await eventService.remove(selectedEvent._id);
+        } catch (error) {
+            setHasError(true);
+        }
+
         setEvents(events => events.filter(event => event._id !== selectedEvent._id));
         setSelectedEvent({});
         setShowModal(false);
     }
+
+    if (hasError) return <SomethingWrong />
 
     return (
         <>
@@ -39,7 +49,7 @@ const EventList = () => {
                 </div>
             </section>
 
-            <DeleteEventModal show={showModal} onClose={() => {setShowModal(false)}} deleteUserHandler={deleteUserHandler} event={selectedEvent} />
+            <DeleteEventModal show={showModal} onClose={() => { setShowModal(false) }} deleteUserHandler={deleteUserHandler} event={selectedEvent} />
         </>
     );
 }

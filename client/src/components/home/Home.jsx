@@ -3,23 +3,26 @@ import { useEffect, useState } from "react";
 import * as  eventService from "../../services/eventService";
 import MyCarousel from "../my-carousel/MyCarousel";
 import styles from "./Home.module.css";
+import SomethingWrong from "../something-wrong/SomethingWrong";
 
 const Home = () => {
     const [events, setEvents] = useState([]);
+    const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
         eventService
             .getAll()
-            .then(result => setEvents(result));
+            .then(result => setEvents(result))
+            .catch(e => setHasError(true));
     }, []);
 
-
+    if (hasError) return <SomethingWrong />
     return (
         <>
             <section>
                 <Container>
                     <h1 className={styles.heading}>Explore With Us</h1>
-                    <MyCarousel events={events}/>
+                    <MyCarousel events={events} />
                 </Container>
             </section>
         </>

@@ -4,21 +4,22 @@ import { useNavigate, useParams } from "react-router-dom";
 import { formatDate } from "../../utils/dateUtils";
 import styles from './EventDetails.module.css';
 import * as  eventService from "../../services/eventService";
+import SomethingWrong from "../something-wrong/SomethingWrong";
 
 const EventDetails = () => {
     const { id } = useParams();
     const [event, setEvent] = useState({});
     const navigate = useNavigate();
+    const [hasError, setHasError] = useState(false);
 
     useEffect(() => {
         eventService
             .getOne(id)
             .then(setEvent)
-            .catch((err) => {
-                navigate('/events');
-            });
+            .catch(e => setHasError(true));
     }, [id]);
 
+    if (hasError) return <SomethingWrong />
     return (
         <>
             <Card className={styles['card-details']}>

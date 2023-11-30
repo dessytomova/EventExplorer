@@ -2,15 +2,6 @@ import * as request from "../lib/request";
 
 const baseUrl = 'http://localhost:3030/data/events';
 
-export const getAll = async () => {
-    const data = await request.get(baseUrl);
-    return data;
-};
-
-export const getOne = async (id) => {
-    return await request.get(`${baseUrl}/${id}`);
-};
-
 const buildRequestBody = (data) => {
     return {
         name: data.name,
@@ -29,9 +20,19 @@ const buildRequestBody = (data) => {
             purchaseLink: data.purchaseLink
         }
     }
-
 }
+
+export const getAll = async () => {
+    const data = await request.get(baseUrl);
+    return data;
+};
+
+export const getOne = async (id) => {
+    return await request.get(`${baseUrl}/${id}`);
+};
+
 export const create = async (data) => {
+   
     const body = buildRequestBody(data);
 
     if (data.online) body.ticketInfo.purchaseOptions.push('Online');
