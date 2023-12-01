@@ -31,6 +31,15 @@ export const getOne = async (id) => {
     return await request.get(`${baseUrl}/${id}`);
 };
 
+export const getByOwner = async (ownerId) => {
+    const query = new URLSearchParams({
+        where: `_ownerId="${ownerId}"`
+    });
+
+    return await request.get(`${baseUrl}?${query}`);
+};
+
+
 export const create = async (data) => {
    
     const body = buildRequestBody(data);

@@ -7,6 +7,7 @@ import styles from './CreateEventForm.module.css';
 import useForm from '../../hooks/useFormHook';
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import { useState } from 'react';
+import Path from '../../paths';
 
 const formInitialState = {
     name: '',
@@ -31,7 +32,7 @@ const CreateEventForm = () => {
     const submitHandler = async (data) => {
         try {
             await eventService.create(data);
-            navigate('/events');
+            navigate(Path.MyEvents);
         } catch (error) {
             setHasError(true);
         }

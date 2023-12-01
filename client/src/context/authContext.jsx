@@ -17,7 +17,7 @@ export const AuthProvider = ({
         const result = await authService.login(values.email, values.password);
         setAuth(result);
         localStorage.setItem('accessToken', result.accessToken);
-        navigate(Path.Home);
+        navigate(Path.MyEvents);
     };
 
     const registerSubmitHandler = async (values) => {
