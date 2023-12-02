@@ -1,15 +1,22 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import EventListItem from "./event-list-item/EventListItem";
 import * as  eventService from "../../services/eventService";
+import * as  likeService from "../../services/likeService";
 import styles from './EventList.module.css';
 import DeleteEventModal from "../event-delete/DeleteEventModal";
 import SomethingWrong from "../something-wrong/SomethingWrong";
+import AuthContext from "../../context/authContext";
+import { useRouteError } from "react-router-dom";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState({});
     const [hasError, setHasError] = useState(false);
+    const [liked, setLiked] = useState([]);
+    const { userId } = useContext(AuthContext);
+
+
 
     useEffect(() => {
         eventService
@@ -17,6 +24,11 @@ const EventList = () => {
             .then(result => setEvents(result))
             .catch(e => setHasError(true));
     }, []);
+
+    useEffect(() => {
+        likeService.getAllByUserId(userId)
+            .then(res => setLiked(res));
+    }, [])
 
     const onDeleteButtonClick = (event) => {
         setSelectedEvent(event);
@@ -35,6 +47,21 @@ const EventList = () => {
         setShowModal(false);
     }
 
+    const onLikeClicked = (id) => {
+        likeService.create({
+            eventId: id
+        }).then(result =>
+            setLiked(state => [...state, result])
+        ).catch(e => setHasError(true));
+    }
+
+    const onDislikeClicked = (like) => {
+        likeService.remove(like._id)
+            .then(result =>
+                setLiked(state => state.filter((l => l !== like)))
+            ).catch(e => setHasError(true));
+    }
+
     if (hasError) return <SomethingWrong />
 
     return (
@@ -43,7 +70,13 @@ const EventList = () => {
                 <div className={styles['event-container']}>
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
-                            <EventListItem {...event} onDeleteButtonClick={onDeleteButtonClick} />
+                            <EventListItem {...event}
+                                userId = {userId}
+                                onDeleteButtonClick={onDeleteButtonClick}
+                                like={liked.find(l => l.eventId === event._id)}
+                                onLikeClicked={onLikeClicked}
+                                onDislikeClicked={onDislikeClicked}
+                            />
                         </div>
                     ))}
                 </div>

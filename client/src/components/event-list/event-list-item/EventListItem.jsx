@@ -2,10 +2,6 @@ import { Button, Card, Container, ListGroup } from "react-bootstrap";
 import { formatDate } from "../../../utils/dateUtils";
 import styles from './EventListItem.module.css';
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
-import AuthContext from "../../../context/authContext";
-import * as  likeService from "../../../services/likeService";
-import SomethingWrong from "../../something-wrong/SomethingWrong";
 
 const EventListItem = (
     {
@@ -18,34 +14,12 @@ const EventListItem = (
         ticketInfo,
         _ownerId,
         onDeleteButtonClick,
+        onLikeClicked,
+        onDislikeClicked,
+        like, 
+        userId
     }
 ) => {
-    const { userId } = useContext(AuthContext);
-    const [liked, setLiked] = useState(false);
-    const [hasError, setHasError] = useState(false);
-
-    useEffect(() => {
-        likeService
-            .getOneByUserId(_id, userId)
-            .then(result => {
-                if (result.length) setLiked(true);
-            })
-            .catch(e => setHasError(true));
-
-    })
-
-
-    const onLikeButtonClick = (eventId) => {
-        likeService.create({
-            eventId: _id
-        }).then(result =>
-            setLiked(true)
-        ).catch(e => setHasError(true));
-
-    }
-
-    if (hasError) return <SomethingWrong />;
-
     return (
         <Card className={styles['card-item']}>
             <Card.Img variant="top" src={imageUrl} />
@@ -83,9 +57,8 @@ const EventListItem = (
                         </div>
                     )
                 }
-                {!liked && userId && userId !== _ownerId && <Button onClick={() => onLikeButtonClick(_id)}>&#9825;</Button>}
-                {liked && userId && userId !== _ownerId && <Button>&#9829;</Button>}
-                
+                {!like && userId && userId !== _ownerId && <Button onClick={() => onLikeClicked(_id)}>&#9825;</Button>}
+                {like && userId && userId !== _ownerId && <Button onClick={() => onDislikeClicked(like)}>&#9829;</Button>}
             </Card.Body>
         </Card>
     );
