@@ -39,6 +39,10 @@ export const getByOwner = async (ownerId) => {
     return await request.get(`${baseUrl}?${query}`);
 };
 
+export const getByFilter = async (filter) => {
+    return await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20%20host%20LIKE%20"${filter}"`);
+};
+
 
 export const create = async (data) => {
    

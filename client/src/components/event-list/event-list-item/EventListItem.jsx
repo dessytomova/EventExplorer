@@ -13,11 +13,11 @@ const EventListItem = (
         address,
         ticketInfo,
         _ownerId,
+        like, 
+        userId, 
         onDeleteButtonClick,
         onLikeClicked,
         onDislikeClicked,
-        like, 
-        userId
     }
 ) => {
     return (

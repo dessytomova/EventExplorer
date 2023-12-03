@@ -7,6 +7,7 @@ import DeleteEventModal from "../event-delete/DeleteEventModal";
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import AuthContext from "../../context/authContext";
 import { useRouteError } from "react-router-dom";
+import InnerNav from "../inner-nav/InnerNav";
 
 const EventList = () => {
     const [events, setEvents] = useState([]);
@@ -17,15 +18,20 @@ const EventList = () => {
     const { userId } = useContext(AuthContext);
 
 
+    const loadAll = () => {
+        eventService
+        .getAll()
+        .then(result => setEvents(result))
+        .catch(e => setHasError(true));
+    }
+
 
     useEffect(() => {
-        eventService
-            .getAll()
-            .then(result => setEvents(result))
-            .catch(e => setHasError(true));
+       loadAll()
     }, []);
 
     useEffect(() => {
+       
         likeService.getAllByUserId(userId)
             .then(res => setLiked(res));
     }, [])
@@ -62,20 +68,32 @@ const EventList = () => {
             ).catch(e => setHasError(true));
     }
 
+    const searchSubmitHandler = async (searchValue) => {
+        try {
+            const res = await eventService.getByFilter(searchValue.search);
+            setEvents(res);
+            
+        } catch (error) {
+            setHasError(true);
+        }
+    }
+
     if (hasError) return <SomethingWrong />
 
     return (
         <>
             <section>
+                <InnerNav searchSubmitHandler={searchSubmitHandler} defaultDataHandler={loadAll}/>
+                
                 <div className={styles['event-container']}>
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
                             <EventListItem {...event}
                                 userId = {userId}
-                                onDeleteButtonClick={onDeleteButtonClick}
                                 like={liked.find(l => l.eventId === event._id)}
                                 onLikeClicked={onLikeClicked}
                                 onDislikeClicked={onDislikeClicked}
+                                onDeleteButtonClick={onDeleteButtonClick}
                             />
                         </div>
                     ))}

@@ -25,8 +25,6 @@ export default function useForm(submitHandler, initialValues) {
         e.preventDefault();
 
         submitHandler(values);
-
-        onReset();
     }
 
     const onReset = () => {
