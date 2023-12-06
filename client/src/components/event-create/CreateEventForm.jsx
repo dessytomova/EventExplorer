@@ -25,6 +25,21 @@ const formInitialState = {
     price: ''
 };
 
+const currentDate = new Date();
+const currentDateString = currentDate.toISOString().slice(0, 16);
+
+const validationRules = {
+    name: { minLength: 5, message: 'Please enter a name with at least 5 characters.' },
+    description: { minLength: 10, message: 'Please provide a description with at least 10 characters.' },
+    host: { minLength: 5, message: 'Please enter a host name with at least 5 characters.' },
+    datetime: { minDate: currentDateString, message: 'Please select a future date and time.' },
+    imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid URL for the image.' },
+    city: { minLength: 3, message: 'Please enter a city name with at least 3 characters.' },
+    price: { minValue: 0, type: 'number', message: 'Please enter a valid positive number for the price.' },
+    streetNumber: { minValue: 0, message: 'Please enter a valid positive number for the street number.' },
+    purchaseLink: { type: 'url', message: 'Please enter a valid URL for the purchase link.' },
+}
+
 const CreateEventForm = () => {
     const navigate = useNavigate();
     const [hasError, setHasError] = useState(false);
@@ -38,8 +53,9 @@ const CreateEventForm = () => {
         }
     };
 
-    const { values, onChange, onReset, onSubmit } = useForm(submitHandler, formInitialState);
-    
+
+    const { values, onChange, onReset, onSubmit, onBlur, errors } = useForm(submitHandler, formInitialState, validationRules);
+
     if (hasError) return <SomethingWrong />
     return (
         <section className={styles['add-event-form']}>
@@ -48,20 +64,23 @@ const CreateEventForm = () => {
                 <Container>
                     <Form onSubmit={onSubmit}>
                         <Form.Group as={Row} className="mb-3" controlId="eventName">
-                            <Form.Label column sm="2">Name</Form.Label>
+                            <Form.Label column sm="2">Name *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter event name"
                                     name="name"
                                     value={values.name}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.name && <p>{errors.name}</p>}
+
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventDescription">
-                            <Form.Label column sm="2">Description</Form.Label>
+                            <Form.Label column sm="2">Description *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     as="textarea"
@@ -69,46 +88,57 @@ const CreateEventForm = () => {
                                     placeholder="Enter event description"
                                     name="description"
                                     value={values.description}
+                                    onBlur={onBlur}
                                     onChange={onChange}
+
                                 />
+                                {errors.description && <p>{errors.description}</p>}
+
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventDatetime">
-                            <Form.Label column sm="2">Datetime</Form.Label>
+                            <Form.Label column sm="2">Datetime *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="datetime-local"
                                     name="datetime"
                                     value={values.datetime}
+                                    onBlur={onBlur}
                                     onChange={onChange}
+                                    min={currentDateString}
                                 />
+                                {errors.datetime && <p>{errors.datetime}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventHost">
-                            <Form.Label column sm="2">Host</Form.Label>
+                            <Form.Label column sm="2">Host *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter event host"
                                     name="host"
                                     value={values.host}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.host && <p>{errors.host}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventImageUrl">
-                            <Form.Label column sm="2">Image Url</Form.Label>
+                            <Form.Label column sm="2">Image Url *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
-                                    type="text"
+                                    type="url"
                                     placeholder="Enter event image"
                                     name="imageUrl"
                                     value={values.imageUrl}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.imageUrl && <p>{errors.imageUrl}</p>}
                             </Col>
                         </Form.Group>
 
@@ -120,21 +150,24 @@ const CreateEventForm = () => {
                                     placeholder="Enter event country"
                                     name="country"
                                     value={values.country}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventCity">
-                            <Form.Label column sm="2">City</Form.Label>
+                            <Form.Label column sm="2">City *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
                                     placeholder="Enter event city"
                                     name="city"
                                     value={values.city}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.city && <p>{errors.city}</p>}
                             </Col>
                         </Form.Group>
 
@@ -146,6 +179,7 @@ const CreateEventForm = () => {
                                     placeholder="Enter event street"
                                     name="street"
                                     value={values.street}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
                             </Col>
@@ -159,8 +193,10 @@ const CreateEventForm = () => {
                                     placeholder="Enter street number"
                                     name="streetNumber"
                                     value={values.streetNumber}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.streetNumber && <p>{errors.streetNumber}</p>}
                             </Col>
                         </Form.Group>
 
@@ -172,6 +208,7 @@ const CreateEventForm = () => {
                                     label="Online"
                                     name="online"
                                     checked={values.online}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                     id="onlineCheckbox"
                                 />
@@ -180,6 +217,7 @@ const CreateEventForm = () => {
                                     label="On Gate"
                                     name="onGate"
                                     checked={values.onGate}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                     id="onGateCheckbox"
                                 />
@@ -189,12 +227,15 @@ const CreateEventForm = () => {
                             <Form.Label column sm="2">Price</Form.Label>
                             <Col sm="10">
                                 <Form.Control
-                                    type="number"
+                                    type="text"
                                     placeholder="Price"
                                     name="price"
                                     value={values.price}
+                                    onBlur={onBlur}
                                     onChange={onChange}
+
                                 />
+                                {errors.price && <p>{errors.price}</p>}
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="purchaseLink">
@@ -205,8 +246,10 @@ const CreateEventForm = () => {
                                     placeholder="Enter purchase link"
                                     name="purchaseLink"
                                     value={values.purchaseLink}
+                                    onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                {errors.purchaseLink && <p>{errors.purchaseLink}</p>}
                             </Col>
                         </Form.Group>
 
