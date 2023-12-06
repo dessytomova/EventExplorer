@@ -8,12 +8,10 @@ const buildRequestBody = (data) => {
         description: data.description,
         datetime: data.datetime,
         host: data.host,
-        address: {
-            country: data.country,
-            city: data.city,
-            street: data.street,
-            streetNumber: data.streetNumber,
-        },
+        country:data.country, 
+        city: data.city,
+        street: data.street,
+        streetNumber: data.streetNumber,
         imageUrl: data.imageUrl,
         ticketInfo: {
             purchaseOptions: [],
@@ -41,7 +39,7 @@ export const getByOwner = async (ownerId) => {
 };
 
 export const getByFilter = async (filter) => {
-    return await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20%20host%20LIKE%20"${filter}"`);
+    return await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20host%20LIKE%20"${filter}"%20OR%20city%20LIKE%20"${filter}"`);                                                       
 };
 
 

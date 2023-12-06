@@ -70,7 +70,7 @@ const EventList = () => {
 
     const searchSubmitHandler = async (searchValue) => {
         try {
-            const res = await eventService.getByFilter(searchValue.search);
+            const res = await eventService.getByFilter(searchValue.search.trim());
             setEvents(res);
             
         } catch (error) {

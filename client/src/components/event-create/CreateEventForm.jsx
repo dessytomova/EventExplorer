@@ -34,6 +34,7 @@ const validationRules = {
     host: { minLength: 5, message: 'Please enter a host name with at least 5 characters.' },
     datetime: { minDate: currentDateString, message: 'Please select a future date and time.' },
     imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid URL for the image.' },
+    country: { minLength: 2, message: 'Please enter a country name with at least 2 characters.' },
     city: { minLength: 3, message: 'Please enter a city name with at least 3 characters.' },
     price: { minValue: 0, type: 'number', message: 'Please enter a valid positive number for the price.' },
     streetNumber: { minValue: 0, message: 'Please enter a valid positive number for the street number.' },
@@ -143,7 +144,7 @@ const CreateEventForm = () => {
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventCountry">
-                            <Form.Label column sm="2">Country</Form.Label>
+                            <Form.Label column sm="2">Country *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
@@ -153,6 +154,7 @@ const CreateEventForm = () => {
                                     onBlur={onBlur}
                                     onChange={onChange}
                                 />
+                                 {errors.country && <p>{errors.country}</p>}
                             </Col>
                         </Form.Group>
 

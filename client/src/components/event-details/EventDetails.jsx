@@ -33,7 +33,7 @@ const EventDetails = () => {
                 <ListGroup className="list-group-flush">
                     <ListGroup.Item>{formatDate(event.datetime)}</ListGroup.Item>
                     <ListGroup.Item>{event.host}</ListGroup.Item>
-                    <ListGroup.Item>{event.address?.country}, {event.address?.city}, {event.address?.street} {event.address?.streetNumber}</ListGroup.Item>
+                    <ListGroup.Item>{event.country} {event.country ? `, ${event.city}` : `, ${event.city}`} {event.street && `, ${event.street}`} {event?.streetNumber}</ListGroup.Item>
                     {
                         event.ticketInfo?.price && <ListGroup.Item>{event.ticketInfo.price}</ListGroup.Item>
                     }

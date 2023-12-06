@@ -1347,12 +1347,10 @@
                 "description": "With great pleasure, BGTSC invites the cult thrash brigade VIO-LENCE for its first concert in Bulgaria next year. If we have to describe VIO-LENCE in one word, it's 'legendary'! The classics from the Bay Area in San Francisco are among the leaders of the second wave of American thrash metal from the latter half of the 80s. It is an honor for us to announce their concert on March 29th at Mixtape 5 club",
                 "datetime": "2024-03-29T22:00",
                 "host": "Mixtape 5",
-                "address": {
-                    "country": "BG",
-                    "city": "Sofia",
-                    "street": "Blvd. Cherni vrah",
-                    "streetNumber": "1142"
-                },
+                "country": "BG",
+                "city": "Sofia",
+                "street": "Blvd. Cherni vrah",
+                "streetNumber": "1142",
                 "imageUrl": "https://metalhangar18.com/wp/ups/2020/08/violence-photo.jpg",
                 "ticketInfo": {
                     "purchaseOptions": [],
@@ -1367,12 +1365,10 @@
                 "description": "THE GRAND FINALE",
                 "datetime": "2024-04-17T20:00",
                 "host": "Arena Sofia",
-                "address": {
-                    "country": "BG",
-                    "city": "Sofia",
-                    "street": "Blvd Asen Yordanov",
-                    "streetNumber": "1"
-                },
+                "country": "BG",
+                "city": "Sofia",
+                "street": "Blvd Asen Yordanov",
+                "streetNumber": "1",
                 "imageUrl": "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 "ticketInfo": {
                     "purchaseOptions": [
@@ -1388,11 +1384,9 @@
                 "description": "Midalidare Rock In The Wine Valley 2024 will take place between July 12th and 14th. The first headliner for 2024 is the legendary Deep Purple, who will perform on July 14th, Sunday.",
                 "datetime": "2024-07-14T07:22:00.358Z",
                 "host": "Midalidare Estate",
-                "address": {
                 "country": "BG",
                 "city": "Mogilovo",
-                "streetNumber": "6239"
-                },
+                "streetNumber": "6239",
                 "imageUrl": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
                 "ticketInfo": {
                 "purchaseOptions": ["Online"], 

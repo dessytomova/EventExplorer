@@ -10,7 +10,10 @@ const EventListItem = (
         name,
         datetime,
         host,
-        address,
+        country,
+        city,
+        street, 
+        streetNumber,
         ticketInfo,
         _ownerId,
         like, 
@@ -32,7 +35,7 @@ const EventListItem = (
             <ListGroup className="list-group-flush">
                 <ListGroup.Item>{formatDate(datetime)}</ListGroup.Item>
                 <ListGroup.Item>{host}</ListGroup.Item>
-                <ListGroup.Item>{address?.country}, {address?.city}, {address?.street} {address?.streetNumber}</ListGroup.Item>
+                <ListGroup.Item>{country}{country ? `, ${city}` : `${city}`}{street && `, ${street}`} {streetNumber}</ListGroup.Item>
                 {
                     ticketInfo && ticketInfo.price && <ListGroup.Item>{ticketInfo.price}</ListGroup.Item>
                 }
