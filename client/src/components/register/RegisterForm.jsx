@@ -7,20 +7,26 @@ import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 
 
-const RegisterFormKeys= {
-    Email:'email', 
-    Password:'password', 
+const RegisterFormKeys = {
+    Email: 'email',
+    Password: 'password',
     ConfirmPassword: 'confirm-password'
+}
+
+const validationRules = {
+    password: { minLength: 6, message: 'Please enter a password with at least 6 characters.' },
+    email: { type: 'email', message: 'Please provide a valid email address.' },
+    'confirm-password': { type: 'confirm-pass', message: 'Please enter a confirm password which matches the password' },
 }
 
 const RegisterForm = () => {
 
-    const {registerSubmitHandler} = useContext(AuthContext);
-    const {values,onChange,onSubmit} = useForm(registerSubmitHandler, {
-        [RegisterFormKeys.Email]: '', 
-        [RegisterFormKeys.Password]: '', 
-        [RegisterFormKeys.ConfirmPassword]: '', 
-    });
+    const { registerSubmitHandler } = useContext(AuthContext);
+    const { values, onChange, onSubmit, onBlur, errors } = useForm(registerSubmitHandler, {
+        [RegisterFormKeys.Email]: '',
+        [RegisterFormKeys.Password]: '',
+        [RegisterFormKeys.ConfirmPassword]: '',
+    }, validationRules);
 
     return (
         <section className={styles['register-form']}>
@@ -35,7 +41,9 @@ const RegisterForm = () => {
                             name="email"
                             value={values[RegisterFormKeys.Email]}
                             onChange={onChange}
+                            onBlur={onBlur}
                         />
+                        {errors.email && <p>{errors.email}</p>}
                     </Col>
                 </Form.Group>
 
@@ -48,7 +56,9 @@ const RegisterForm = () => {
                             name="password"
                             value={values[RegisterFormKeys.Password]}
                             onChange={onChange}
+                            onBlur={onBlur}
                         />
+                        {errors.password && <p>{errors.password}</p>}
                     </Col>
                 </Form.Group>
 
@@ -61,14 +71,16 @@ const RegisterForm = () => {
                             name="confirm-password"
                             value={values[RegisterFormKeys.ConfirmPassword]}
                             onChange={onChange}
+                            onBlur={onBlur}
                         />
+                        {errors['confirm-password'] && <p>{errors['confirm-password']}</p>}
                     </Col>
                 </Form.Group>
 
                 <Form.Group as={Row} className="mb-3" controlId="submit">
                     <Col sm="4">&nbsp;</Col>
                     <Col sm="8">
-                        <Button type="submit"  variant="primary">
+                        <Button type="submit" variant="primary">
                             Register
                         </Button>
                     </Col>

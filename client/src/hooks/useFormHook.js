@@ -66,6 +66,7 @@ export default function useForm(submitHandler, initialValues, validationRules = 
                 (rule.minValue !== null && rule.minValue !== undefined && value < rule.minValue) ||
                 (rule.type === 'url' && value.length > 0 && !urlRegex.test(value)) ||
                 (rule.type === 'email' && !emailRegex.test(value)) ||
+                (rule.type === 'confirm-pass' && value !== values['password']) ||
                 (rule.type === 'number' && !Number.isInteger(+value)) 
             ) {
                 newErrors[field] = rule.message;
