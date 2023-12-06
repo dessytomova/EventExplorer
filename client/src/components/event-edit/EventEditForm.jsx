@@ -8,6 +8,7 @@ import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../paths';
 import SomethingWrong from "../something-wrong/SomethingWrong";
+import {validate, validateMany} from "../../utils/formValidator";
 
 const initialState = {
     name: '',
@@ -25,11 +26,30 @@ const initialState = {
     price: ''
 };
 
+const currentDate = new Date();
+const currentDateString = currentDate.toISOString().slice(0, 16);
+
+const validationRules = {
+    name: { minLength: 5, message: 'Please enter a name with at least 5 characters.' },
+    description: { minLength: 10, message: 'Please provide a description with at least 10 characters.' },
+    host: { minLength: 5, message: 'Please enter a host name with at least 5 characters.' },
+    datetime: { minDate: currentDateString, message: 'Please select a future date and time.' },
+    imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid URL for the image.' },
+    city: { minLength: 3, message: 'Please enter a city name with at least 3 characters.' },
+    price: { minValue: 0, type: 'number', message: 'Please enter a valid positive number for the price.' },
+    streetNumber: { minValue: 0, message: 'Please enter a valid positive number for the street number.' },
+    purchaseLink: { type: 'url', message: 'Please enter a valid URL for the purchase link.' },
+}
+
+const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
+
 const EditEventForm = () => {
     const { id } = useParams();
     const [values, setValues] = useState(initialState);
     const [hasError, setHasError] = useState(false);
+    const [errors, setErrors] = useState({});
     const navigate = useNavigate();
+
 
     useEffect(() => {
         eventService
@@ -52,16 +72,26 @@ const EditEventForm = () => {
     }, [id]);
 
 
+    const validateForm = () => {
+        const newErrors = validateMany(validationRules, values);
+
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    }
 
     const editEventSubmitHandler = async (e) => {
         e.preventDefault();
-        
-        try{
-            await eventService.edit(id, values);
-            navigate(Path.Events)
-        } catch (error) {
-            setHasError(true);
+      
+
+        if (validateForm()) {
+            try{
+                await eventService.edit(id, values);
+                navigate(Path.Events)
+            } catch (error) {
+                setHasError(true);
+            }
         }
+
     }
 
     const onChange = (e) => {
@@ -78,9 +108,24 @@ const EditEventForm = () => {
         }
 
         setValues(state => ({ ...state, [name]: value }));
+        setErrors((prevErrors) => ({ ...prevErrors, [name]: null }));
     }
 
+
+    const validateField = (field, value) => {
+        let error = null;
+        error = validate(validationRules, field, value);
+
+        setErrors((prevErrors) => ({ ...prevErrors, [field]: error }));
+    };
+    const onBlur = (e) => {
+        const { name, value } = e.target;
+        validateField(name, value);
+    };
+
+
     if (hasError) return <SomethingWrong />
+
     return (
         <section className={styles['edit-event-form']}>
             <h3 className="text-center mb-4">Edit</h3>
@@ -88,7 +133,7 @@ const EditEventForm = () => {
                 <Container>
                     <Form onSubmit={editEventSubmitHandler}>
                         <Form.Group as={Row} className="mb-3" controlId="eventName">
-                            <Form.Label column sm="2">Name</Form.Label>
+                            <Form.Label column sm="2">Name *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
@@ -96,12 +141,14 @@ const EditEventForm = () => {
                                     name="name"
                                     value={values.name}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                 {errors.name && <p>{errors.name}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventDescription">
-                            <Form.Label column sm="2">Description</Form.Label>
+                            <Form.Label column sm="2">Description *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     as="textarea"
@@ -110,24 +157,28 @@ const EditEventForm = () => {
                                     name="description"
                                     value={values.description}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.description && <p>{errors.description}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventDatetime">
-                            <Form.Label column sm="2">Datetime</Form.Label>
+                            <Form.Label column sm="2">Datetime *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="datetime-local"
                                     name="datetime"
                                     value={values.datetime}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.datetime && <p>{errors.datetime}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventHost">
-                            <Form.Label column sm="2">Host</Form.Label>
+                            <Form.Label column sm="2">Host *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
@@ -135,12 +186,14 @@ const EditEventForm = () => {
                                     name="host"
                                     value={values.host}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.host && <p>{errors.host}</p>}
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventImageUrl">
-                            <Form.Label column sm="2">Image Url</Form.Label>
+                            <Form.Label column sm="2">Image Url *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
@@ -148,7 +201,9 @@ const EditEventForm = () => {
                                     name="imageUrl"
                                     value={values.imageUrl}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.imageUrl && <p>{errors.imageUrl}</p>}
                             </Col>
                         </Form.Group>
 
@@ -161,12 +216,13 @@ const EditEventForm = () => {
                                     name="country"
                                     value={values.country}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
                             </Col>
                         </Form.Group>
 
                         <Form.Group as={Row} className="mb-3" controlId="eventCity">
-                            <Form.Label column sm="2">City</Form.Label>
+                            <Form.Label column sm="2">City *</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"
@@ -174,7 +230,9 @@ const EditEventForm = () => {
                                     name="city"
                                     value={values.city}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.city && <p>{errors.city}</p>}
                             </Col>
                         </Form.Group>
 
@@ -187,6 +245,7 @@ const EditEventForm = () => {
                                     name="street"
                                     value={values.street}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
                             </Col>
                         </Form.Group>
@@ -200,7 +259,9 @@ const EditEventForm = () => {
                                     name="streetNumber"
                                     value={values.streetNumber}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.streetNumber && <p>{errors.streetNumber}</p>}
                             </Col>
                         </Form.Group>
 
@@ -214,6 +275,7 @@ const EditEventForm = () => {
                                     checked={values.online}
                                     onChange={onChange}
                                     id="onlineCheckbox"
+                                    onBlur={onBlur}
                                 />
                                 <Form.Check
                                     type="checkbox"
@@ -222,6 +284,7 @@ const EditEventForm = () => {
                                     checked={values.onGate}
                                     onChange={onChange}
                                     id="onGateCheckbox"
+                                    onBlur={onBlur}
                                 />
                             </Col>
                         </Form.Group>
@@ -229,12 +292,14 @@ const EditEventForm = () => {
                             <Form.Label column sm="2">Price</Form.Label>
                             <Col sm="10">
                                 <Form.Control
-                                    type="number"
+                                    type="text"
                                     placeholder="Price"
                                     name="price"
                                     value={values.price}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                 {errors.price && <p>{errors.price}</p>}
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="purchaseLink">
@@ -246,7 +311,9 @@ const EditEventForm = () => {
                                     name="purchaseLink"
                                     value={values.purchaseLink}
                                     onChange={onChange}
+                                    onBlur={onBlur}
                                 />
+                                {errors.purchaseLink && <p>{errors.purchaseLink}</p>}
                             </Col>
                         </Form.Group>
 

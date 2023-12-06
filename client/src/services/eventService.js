@@ -17,7 +17,8 @@ const buildRequestBody = (data) => {
         imageUrl: data.imageUrl,
         ticketInfo: {
             purchaseOptions: [],
-            purchaseLink: data.purchaseLink
+            purchaseLink: data.purchaseLink, 
+            price: data.price
         }
     }
 }
@@ -50,7 +51,6 @@ export const create = async (data) => {
 
     if (data.online) body.ticketInfo.purchaseOptions.push('Online');
     if (data.onGate) body.ticketInfo.purchaseOptions.push('On Gate');
-    if (data.price) body.ticketInfo.price = data.price;
 
     const response = await request.post(baseUrl, body);
     return await response;
@@ -61,7 +61,6 @@ export const edit = async (id, data) => {
 
     if (data.online) body.ticketInfo.purchaseOptions.push('Online');
     if (data.onGate) body.ticketInfo.purchaseOptions.push('On Gate');
-    if (data.price) body.ticketInfo.price = data.price;
 
     const result = await request.put(`${baseUrl}/${id}`, body);
     return result;

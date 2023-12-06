@@ -1,11 +1,10 @@
 import { useState } from "react";
+import {validate, validateMany} from "../utils/formValidator";
 
 export default function useForm(submitHandler, initialValues, validationRules = {}) {
 
     const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     const onChange = (e) => {
         let value = '';
@@ -21,33 +20,17 @@ export default function useForm(submitHandler, initialValues, validationRules = 
         }
 
         setValues(state => ({ ...state, [name]: value }));
-
         setErrors((prevErrors) => ({ ...prevErrors, [name]: null }));
     }
 
     const onBlur = (e) => {
         const { name, value } = e.target;
-    
         validateField(name, value);
-    
     };
 
     const validateField = (field, value) => {
-        const rule = validationRules[field];
         let error = null;
-
-        if (rule) {
-            if (
-                (rule.minLength && value.length < rule.minLength) ||
-                (rule.minDate && value < rule.minDate) ||
-                (rule.minValue !== null && rule.minValue !== undefined && +value < +rule.minValue) ||
-                (rule.type === 'url' && value.length > 0 && !urlRegex.test(value)) ||
-                (rule.type === 'number' && !Number.isInteger(+value))
-            ) {
-                error = rule.message;
-            }
-        }
-
+        error = validate(validationRules, field, value);
 
         setErrors((prevErrors) => ({ ...prevErrors, [field]: error }));
     };
@@ -55,23 +38,7 @@ export default function useForm(submitHandler, initialValues, validationRules = 
 
 
     const validateForm = () => {
-        const newErrors = {};
-    
-        Object.entries(validationRules).forEach(([field, rule]) => {
-            const value = values[field];
-
-            if (
-                (rule.minLength && value.length < rule.minLength) ||
-                (rule.minDate && value < rule.minDate) ||
-                (rule.minValue !== null && rule.minValue !== undefined && value < rule.minValue) ||
-                (rule.type === 'url' && value.length > 0 && !urlRegex.test(value)) ||
-                (rule.type === 'email' && !emailRegex.test(value)) ||
-                (rule.type === 'confirm-pass' && value !== values['password']) ||
-                (rule.type === 'number' && !Number.isInteger(+value)) 
-            ) {
-                newErrors[field] = rule.message;
-            }
-        });
+        const newErrors = validateMany(validationRules, values);
 
         setErrors(newErrors);
 
