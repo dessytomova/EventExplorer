@@ -4,7 +4,8 @@ export default function useForm(submitHandler, initialValues, validationRules = 
 
     const [values, setValues] = useState(initialValues);
     const [errors, setErrors] = useState({});
-
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
 
     const onChange = (e) => {
         let value = '';
@@ -33,7 +34,6 @@ export default function useForm(submitHandler, initialValues, validationRules = 
 
     const validateField = (field, value) => {
         const rule = validationRules[field];
-        const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
         let error = null;
 
         if (rule) {
@@ -56,8 +56,7 @@ export default function useForm(submitHandler, initialValues, validationRules = 
 
     const validateForm = () => {
         const newErrors = {};
-        const urlRegex = /^(ftp|http|https):\/\/[^ "]+$/;
-
+    
         Object.entries(validationRules).forEach(([field, rule]) => {
             const value = values[field];
 
@@ -66,7 +65,8 @@ export default function useForm(submitHandler, initialValues, validationRules = 
                 (rule.minDate && value < rule.minDate) ||
                 (rule.minValue !== null && rule.minValue !== undefined && value < rule.minValue) ||
                 (rule.type === 'url' && value.length > 0 && !urlRegex.test(value)) ||
-                (rule.type === 'number' && !Number.isInteger(+value))
+                (rule.type === 'email' && !emailRegex.test(value)) ||
+                (rule.type === 'number' && !Number.isInteger(+value)) 
             ) {
                 newErrors[field] = rule.message;
             }

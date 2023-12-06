@@ -7,19 +7,25 @@ import AuthContext from "../../context/authContext";
 import { useContext } from "react";
 
 
-const LoginFormKeys= {
-    Email:'email', 
-    Password:'password'
+const LoginFormKeys = {
+    Email: 'email',
+    Password: 'password'
+}
+
+const validationRules = {
+    password: { minLength: 6, message: 'Please enter a password with at least 6 characters.' },
+    email: { type: 'email', message: 'Please provide a valid email address.' },
+
 }
 
 const LoginForm = () => {
     const { loginSubmitHandler } = useContext(AuthContext);
 
-    const {values,onChange, onSubmit} = useForm(loginSubmitHandler,  {
-        [LoginFormKeys.Email]: '', 
-        [LoginFormKeys.Password]: '', 
-    });
 
+    const { values, onChange, onSubmit, onBlur, errors } = useForm(loginSubmitHandler, {
+        [LoginFormKeys.Email]: '',
+        [LoginFormKeys.Password]: '',
+    }, validationRules);
     return (
         <section className={styles['login-form']}>
             <h3 className="text-center mb-4">Login to EventsExplorer</h3>
@@ -33,7 +39,9 @@ const LoginForm = () => {
                             name="email"
                             value={values[LoginFormKeys.Email]}
                             onChange={onChange}
+                            onBlur={onBlur}
                         />
+                        {errors.email && <p>{errors.email}</p>}
                     </Col>
                 </Form.Group>
 
@@ -46,14 +54,16 @@ const LoginForm = () => {
                             name="password"
                             value={values[LoginFormKeys.Password]}
                             onChange={onChange}
+                            onBlur={onBlur}
                         />
+                        {errors.password && <p>{errors.password}</p>}
                     </Col>
                 </Form.Group>
 
                 <Form.Group as={Row} className="mb-3" controlId="submit">
                     <Col sm="4">&nbsp;</Col>
                     <Col sm="8">
-                        <Button type="submit"  variant="primary">
+                        <Button type="submit" variant="primary">
                             Login
                         </Button>
                     </Col>
