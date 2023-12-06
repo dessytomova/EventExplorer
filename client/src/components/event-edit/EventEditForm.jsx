@@ -15,7 +15,7 @@ const initialState = {
     description: '',
     datetime: '',
     host: '',
- //   country: '',
+    country: '',
     city: '',
     street: '',
     streetNumber: '',
@@ -58,14 +58,10 @@ const EditEventForm = () => {
     
                 setValues({
                     ...data, 
-                    country:data?.country, 
-                    city:data?.city, 
-                    street:data?.street, 
-                    streetNumber:data?.streetNumber, 
                     onGate: !!data?.ticketInfo?.purchaseOptions.includes('On Gate'), 
                     online: !!data?.ticketInfo?.purchaseOptions.includes('Online'), 
                     purchaseLink:data?.ticketInfo?.purchaseLink, 
-                    price:data?.ticketInfo?.price, 
+                    price:data?.ticketInfo?.price || '', 
                 })
             })
             .catch(e => setHasError(true))
@@ -92,6 +88,10 @@ const EditEventForm = () => {
             }
         }
 
+    }
+
+    const closeEditSubmitHandler = () => {
+        navigate(Path.Events);
     }
 
     const onChange = (e) => {
@@ -320,9 +320,12 @@ const EditEventForm = () => {
 
                         <Form.Group as={Row} className="mb-3" controlId="buttons">
                             <Col sm="2">&nbsp;</Col>
-                            <Col sm="10">
+                            <Col sm="10" className={styles['button-container']}>
                                 <Button variant="primary" type="submit">
                                     Save
+                                </Button>
+                                <Button variant="danger" type="submit" onClick={closeEditSubmitHandler}>
+                                    Cancel
                                 </Button>
                             </Col>
                         </Form.Group>

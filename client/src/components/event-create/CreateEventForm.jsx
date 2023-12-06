@@ -257,7 +257,7 @@ const CreateEventForm = () => {
 
                         <Form.Group as={Row} className="mb-3" controlId="buttons">
                             <Col sm="2">&nbsp;</Col>
-                            <Col sm="10">
+                            <Col sm="10" className={styles['button-container']}>
                                 <Button variant="primary" type="submit">
                                     Create
                                 </Button>

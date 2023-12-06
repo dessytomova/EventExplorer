@@ -25,10 +25,10 @@ const DeleteEventModal = (
                     {event.name}
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button variant="primary" onClick={deleteUserHandler}>Delete</Button>
                     <Button variant="danger" onClick={onClose}>
                         Close
                     </Button>
-                    <Button variant="primary" onClick={deleteUserHandler}>Delete</Button>
                 </Modal.Footer>
             </Modal>
         </>

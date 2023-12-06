@@ -17,3 +17,9 @@
         padding: 15px 20px;
     }
 }
+
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}

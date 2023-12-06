@@ -1389,8 +1389,8 @@
                 "streetNumber": "6239",
                 "imageUrl": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
                 "ticketInfo": {
-                "purchaseOptions": ["Online"], 
-                "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
+                   "purchaseOptions": ["Online"], 
+                    "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
                 },
                 "_createdOn": 1700917263567
             }

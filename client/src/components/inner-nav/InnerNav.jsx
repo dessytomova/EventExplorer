@@ -11,7 +11,7 @@ const InnerNav = ({searchSubmitHandler, defaultDataHandler}) => {
     return (
         <Navbar className="bg-body-tertiary justify-content-between"  data-bs-theme="dark">
        
-        <Form inline onSubmit={onSubmit}>
+        <Form inline='true' onSubmit={onSubmit}>
           <Row>
             <Col xs="auto">
               <Form.Control
