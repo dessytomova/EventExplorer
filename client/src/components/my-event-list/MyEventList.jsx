@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import Spinner from 'react-bootstrap/Spinner';
 import * as  eventService from "../../services/eventService";
 import styles from './MyEventList.module.css';
 import DeleteEventModal from "../event-delete/DeleteEventModal";
@@ -15,11 +16,16 @@ const MyEventList = () => {
     const [selectedEvent, setSelectedEvent] = useState({});
     const [hasError, setHasError] = useState();
     const { userId } = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
+        setIsLoading(true);
         eventService
             .getByOwner(userId)
-            .then(result => setEvents(result))
+            .then(result => {
+                setEvents(result);
+                setIsLoading(false);
+            })
             .catch(e => setHasError({ message: e.message }));
     }, []);
 
@@ -46,18 +52,20 @@ const MyEventList = () => {
         <>
             <section>
                 <div className={styles['event-container']}>
-
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
                             <EventListItem {...event} userId={userId} onDeleteButtonClick={onDeleteButtonClick} />
                         </div>
                     ))}
+                    
                     {!events.length && (
                         <div className={styles['no-events-container']}>
-                            <h1>Add your first event.</h1>
-                            <Link to={Path.NewEvent}>
+                            {isLoading && <Spinner animation="border" />}
+                            {!isLoading && <h1>Add your first event.</h1>}
+
+                            {!isLoading && <Link to={Path.NewEvent}>
                                 <Button>New Event</Button>
-                            </Link>
+                            </Link>}
                         </div>
                     )}
                 </div>

@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+import Spinner from 'react-bootstrap/Spinner';
 import EventListItem from "./event-list-item/EventListItem";
 import * as  eventService from "../../services/eventService";
 import * as  likeService from "../../services/likeService";
@@ -16,9 +17,10 @@ const EventList = () => {
     const [hasError, setHasError] = useState();
     const [liked, setLiked] = useState([]);
     const { userId } = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
 
   
-    const loadAll = () => {
+    const loadAll = () => {    
         eventService
         .getAllActive()
         .then(result => setEvents(result))
@@ -27,11 +29,15 @@ const EventList = () => {
 
 
     useEffect(() => {
-       loadAll();
+        setIsLoading(true);
+        loadAll();
 
        likeService
        .getAllByUserId(userId)
-       .then(res => setLiked(res))
+       .then(res => {
+            setLiked(res);
+            setIsLoading(false);
+        })
        .catch(e => setHasError({ message: e.message }));
     }, []);
 
@@ -84,6 +90,7 @@ const EventList = () => {
                 <InnerNav searchSubmitHandler={searchSubmitHandler} defaultDataHandler={loadAll}/>
                 
                 <div className={styles['event-container']}>
+                    {isLoading && <Spinner animation="border" />}
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
                             <EventListItem {...event}

@@ -3,3 +3,21 @@
     margin-top:2rem;
     margin-bottom: 2rem;
 }
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    text-align: center;
+  }
+  
+  .spinnerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; 
+    margin-top:2rem;
+    margin-bottom: 2rem;
+  }
