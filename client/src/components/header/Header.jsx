@@ -21,6 +21,7 @@ const Header = () => {
                                 {!isAuthenticated && (<Nav.Link as={Link} to={Path.Login}>Login</Nav.Link>)}
                                 {!isAuthenticated && (<Nav.Link as={Link} to={Path.Register}>Register</Nav.Link>)}
                                 {isAuthenticated && (<Nav.Link as={Link} to={Path.MyEvents}>My Events</Nav.Link>)}
+                                {isAuthenticated && (<Nav.Link as={Link} to={Path.Liked}>Liked</Nav.Link>)}
                                 {isAuthenticated && (<Nav.Link as={Link} to={Path.Events + "/add"}>New Event</Nav.Link>)}
                                 {isAuthenticated && (
                                 <Nav.Link as={Link} to={Path.Logout}>

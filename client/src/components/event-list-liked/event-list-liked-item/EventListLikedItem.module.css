@@ -1,0 +1,15 @@
+.card-item {
+    width: '18rem';
+}
+
+.card-item a {
+    text-decoration: none;
+    color: #8C4227;
+}
+
+.card-item img {
+    height: auto;
+    width: auto;
+    max-height: 200px;
+    object-fit: cover;
+}

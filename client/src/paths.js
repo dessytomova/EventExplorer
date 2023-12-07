@@ -5,6 +5,7 @@ const Path = {
     MyEvents: '/my-events',
     NewEvent: '/events/add',
     Events: '/events',
+    Liked: '/events/liked',
     Logout: '/logout'
 };
 
