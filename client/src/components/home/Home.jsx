@@ -11,7 +11,7 @@ const Home = () => {
 
     useEffect(() => {
         eventService
-            .getAll()
+            .getNearest(5)
             .then(result => setEvents(result))
             .catch(e => setHasError({ message: e.message }));
     }, []);

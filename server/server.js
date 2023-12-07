@@ -1341,6 +1341,24 @@
     };
     var seedData = {
         events: {
+            "7151c2b3-320c-4c4a-bb3a-d2ee8f64d1d1": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "This is test event",
+                "description": "This is test event",
+                "datetime": "2022-03-29T22:00",
+                "host": "Mixtape 5",
+                "country": "BG",
+                "city": "Sofia",
+                "street": "Blvd. Cherni vrah",
+                "streetNumber": "1142",
+                "imageUrl": "https://metalhangar18.com/wp/ups/2020/08/violence-photo.jpg",
+                "ticketInfo": {
+                    "purchaseOptions": [],
+                    "purchaseLink": "https://www.eventim.bg/bg/bileti/vio-lence-sofia-club-mixtape-5-1381811/performance.html",
+                    "price": 40
+                },
+                "_createdOn": 1700916465177
+            },
             "3151c2b3-320c-4c4a-bb3a-d2ee8f64d1d1": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Metal Legends VIO-LENCE for the First Time in Bulgaria.",

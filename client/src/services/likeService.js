@@ -1,6 +1,8 @@
 import * as request from "../lib/request";
 
 const baseUrl = 'http://localhost:3030/data/likes';
+const currentDate = new Date();
+const currentDateString = currentDate.toISOString().slice(0, 10);
 
 export const create = async (data) => {
 
@@ -20,10 +22,13 @@ export const getAllByUserId = async(userId) => {
 export const getAllLiked = async (ownerId) => {
     const query = new URLSearchParams({
         load: `event=eventId:events`,
-        where: `_ownerId="${ownerId}"`
+        where: `_ownerId="${ownerId}"`, 
     });
-
-    return await request.get(`${baseUrl}?${query}`);
+    
+    //filter active events because i cannot filter them on the practise server properly
+    let result = await request.get(`${baseUrl}?${query}`)
+    return result.filter(like => like.event.datetime > currentDateString);
+    //return await request.get(`${baseUrl}?${query}`);
 }
 
 

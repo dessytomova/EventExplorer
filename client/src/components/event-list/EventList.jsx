@@ -20,7 +20,7 @@ const EventList = () => {
   
     const loadAll = () => {
         eventService
-        .getAll()
+        .getAllActive()
         .then(result => setEvents(result))
         .catch(e => setHasError({ message: e.message }));
     }
