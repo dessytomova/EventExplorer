@@ -13,28 +13,27 @@ const EventList = () => {
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState({});
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
     const [liked, setLiked] = useState([]);
     const { userId } = useContext(AuthContext);
 
-
+  
     const loadAll = () => {
         eventService
         .getAll()
         .then(result => setEvents(result))
-        .catch(e => setHasError(true));
+        .catch(e => setHasError({ message: e.message }));
     }
 
 
     useEffect(() => {
-       loadAll()
-    }, []);
+       loadAll();
 
-    useEffect(() => {
-       
-        likeService.getAllByUserId(userId)
-            .then(res => setLiked(res));
-    }, [])
+       likeService
+       .getAllByUserId(userId)
+       .then(res => setLiked(res))
+       .catch(e => setHasError({ message: e.message }));
+    }, []);
 
     const onDeleteButtonClick = (event) => {
         setSelectedEvent(event);
@@ -45,7 +44,7 @@ const EventList = () => {
         try {
             await eventService.remove(selectedEvent._id);
         } catch (error) {
-            setHasError(true);
+            setHasError({ message: error.message });
         }
 
         setEvents(events => events.filter(event => event._id !== selectedEvent._id));
@@ -58,27 +57,26 @@ const EventList = () => {
             eventId: id
         }).then(result =>
             setLiked(state => [...state, result])
-        ).catch(e => setHasError(true));
+        ).catch(e => setHasError({ message: e.message }));
     }
 
     const onDislikeClicked = (like) => {
         likeService.remove(like._id)
             .then(result =>
                 setLiked(state => state.filter((l => l !== like)))
-            ).catch(e => setHasError(true));
+            ).catch(e => setHasError({ message: e.message }));
     }
 
     const searchSubmitHandler = async (searchValue) => {
         try {
             const res = await eventService.getByFilter(searchValue.search.trim());
             setEvents(res);
-            
         } catch (error) {
-            setHasError(true);
+            setHasError({ message: error.message });
         }
     }
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message} />
 
     return (
         <>

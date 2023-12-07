@@ -4,11 +4,12 @@ import Form from 'react-bootstrap/Form';
 import * as  eventService from "../../services/eventService";
 
 import styles from './EventEditForm.module.css';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Path from '../../paths';
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import {validate, validateMany} from "../../utils/formValidator";
+import AuthContext from '../../context/authContext';
 
 const initialState = {
     name: '',
@@ -45,8 +46,9 @@ const validationRules = {
 
 const EditEventForm = () => {
     const { id } = useParams();
+    const {userId} = useContext(AuthContext);
     const [values, setValues] = useState(initialState);
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
     const [errors, setErrors] = useState({});
     const navigate = useNavigate();
 
@@ -55,7 +57,11 @@ const EditEventForm = () => {
         eventService
             .getOne(id)
             .then(data => {
-    
+       
+                if(userId !== data._ownerId){
+                    navigate(Path.Events)
+                }
+
                 setValues({
                     ...data, 
                     onGate: !!data?.ticketInfo?.purchaseOptions.includes('On Gate'), 
@@ -64,7 +70,9 @@ const EditEventForm = () => {
                     price:data?.ticketInfo?.price || '', 
                 })
             })
-            .catch(e => setHasError(true))
+            .catch(e => {
+                setHasError({message: e.message})
+            })
     }, [id]);
 
 
@@ -77,14 +85,13 @@ const EditEventForm = () => {
 
     const editEventSubmitHandler = async (e) => {
         e.preventDefault();
-      
-
+    
         if (validateForm()) {
             try{
                 await eventService.edit(id, values);
                 navigate(Path.Events)
             } catch (error) {
-                setHasError(true);
+                setHasError({message: error.message})
             }
         }
 
@@ -124,7 +131,7 @@ const EditEventForm = () => {
     };
 
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong  message={hasError.message}/>
 
     return (
         <section className={styles['edit-event-form']}>

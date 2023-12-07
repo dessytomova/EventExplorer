@@ -8,17 +8,17 @@ import AuthContext from "../../context/authContext";
 
 const EventListLiked = () => {
     const [liked, setLiked] = useState([]);
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
     const { userId } = useContext(AuthContext);
 
     useEffect(() => {
         likeService
             .getAllLiked(userId)
             .then(result => setLiked(result))
-            .catch(e => setHasError(true));
+            .catch(e => setHasError({ message: e.message }));
     }, []);
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message}/>
 
     return (
         <>

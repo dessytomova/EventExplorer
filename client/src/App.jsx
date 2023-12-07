@@ -11,14 +11,14 @@ import NotFound from './components/not-found/NotFound';
 import { Container } from 'react-bootstrap';
 import RegisterForm from './components/register/RegisterForm';
 import Logout from './components/logout/Logout';
-import {AuthProvider} from './context/authContext';
-import Path from './paths';
-import 'bootstrap/dist/css/bootstrap.min.css'
-import './styles.css';
+import { AuthProvider } from './context/authContext';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/AuthGuard';
 import MyEventList from './components/my-event-list/MyEventList';
 import EventListLiked from './components/event-list-liked/EventListLiked';
+import Path from './paths';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import './styles.css';
 
 
 
@@ -26,32 +26,32 @@ function App() {
 
   return (
     <ErrorBoundary>
-    <AuthProvider>
-      <div className="d-flex flex-column min-vh-100 custom-body">
-        <Header />
+      <AuthProvider>
+        <div className="d-flex flex-column min-vh-100 custom-body">
+          <Header />
 
-        <Container className="mt-4 mb-4 flex-grow-1">
-          <Routes>
-            <Route path={Path.Home} element={<Home />} />
-            <Route path={Path.Login} element={<LoginForm />} />
-            <Route path={Path.Register} element={<RegisterForm />} />
-            <Route path={Path.Events} element={<EventList />} />
-            <Route path={Path.Events + '/:id'} element={<EventDetails />} />
-            
-            <Route element={<AuthGuard/>}>
-              <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
-              <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
-              <Route path={Path.MyEvents} element={<MyEventList />} />
-              <Route path={Path.Liked} element={<EventListLiked />} />
-              <Route path={Path.Logout} element={<Logout />} />
-            </Route>
+          <Container className="mt-4 mb-4 flex-grow-1">
+            <Routes>
+              <Route path={Path.Home} element={<Home />} />
+              <Route path={Path.Login} element={<LoginForm />} />
+              <Route path={Path.Register} element={<RegisterForm />} />
+              <Route path={Path.Events} element={<EventList />} />
+              <Route path={Path.Events + '/:id'} element={<EventDetails />} />
 
-            <Route path='*' element={<NotFound />} />
-          </Routes>
-        </Container>
-        <Footer />
-      </div>
-    </AuthProvider>
+              <Route element={<AuthGuard />}>
+                <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
+                <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
+                <Route path={Path.MyEvents} element={<MyEventList />} />
+                <Route path={Path.Liked} element={<EventListLiked />} />
+                <Route path={Path.Logout} element={<Logout />} />
+              </Route>
+
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </Container>
+          <Footer />
+        </div>
+      </AuthProvider>
     </ErrorBoundary>
 
   );

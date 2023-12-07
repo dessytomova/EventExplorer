@@ -13,14 +13,14 @@ const MyEventList = () => {
     const [events, setEvents] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [selectedEvent, setSelectedEvent] = useState({});
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
     const { userId } = useContext(AuthContext);
 
     useEffect(() => {
         eventService
             .getByOwner(userId)
             .then(result => setEvents(result))
-            .catch(e => setHasError(true));
+            .catch(e => setHasError({ message: e.message }));
     }, []);
 
     const onDeleteButtonClick = (event) => {
@@ -31,8 +31,8 @@ const MyEventList = () => {
     const deleteUserHandler = async () => {
         try {
             await eventService.remove(selectedEvent._id);
-        } catch (error) {
-            setHasError(true);
+        } catch (e) {
+            setHasError({ message: e.message });
         }
 
         setEvents(events => events.filter(event => event._id !== selectedEvent._id));
@@ -40,7 +40,7 @@ const MyEventList = () => {
         setShowModal(false);
     }
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message} />
 
     return (
         <>
@@ -49,7 +49,7 @@ const MyEventList = () => {
 
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
-                            <EventListItem {...event} onDeleteButtonClick={onDeleteButtonClick} />
+                            <EventListItem {...event} userId={userId} onDeleteButtonClick={onDeleteButtonClick} />
                         </div>
                     ))}
                     {!events.length && (

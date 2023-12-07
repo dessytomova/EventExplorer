@@ -7,16 +7,17 @@ import SomethingWrong from "../something-wrong/SomethingWrong";
 
 const Home = () => {
     const [events, setEvents] = useState([]);
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
 
     useEffect(() => {
         eventService
             .getAll()
             .then(result => setEvents(result))
-            .catch(e => setHasError(true));
+            .catch(e => setHasError({ message: e.message }));
     }, []);
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message} />
+
     return (
         <>
             <section>

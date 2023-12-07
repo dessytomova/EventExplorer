@@ -43,21 +43,21 @@ const validationRules = {
 
 const CreateEventForm = () => {
     const navigate = useNavigate();
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
 
     const submitHandler = async (data) => {
         try {
             await eventService.create(data);
             navigate(Path.MyEvents);
         } catch (error) {
-            setHasError(true);
+            setHasError({ message: error.message });
         }
     };
 
 
     const { values, onChange, onReset, onSubmit, onBlur, errors } = useForm(submitHandler, formInitialState, validationRules);
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message}/>
     return (
         <section className={styles['add-event-form']}>
             <h3 className="text-center mb-4">Add New Event</h3>

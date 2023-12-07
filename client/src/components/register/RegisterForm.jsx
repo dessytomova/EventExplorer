@@ -3,8 +3,9 @@ import Form from 'react-bootstrap/Form';
 import styles from './RegisterForm.module.css';
 import useForm from "../../hooks/useFormHook";
 import * as authService from "../../services/authService";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import AuthContext from "../../context/authContext";
+import ErrorAlert from "../something-wrong/ErrorAlert";
 
 
 const RegisterFormKeys = {
@@ -22,7 +23,17 @@ const validationRules = {
 const RegisterForm = () => {
 
     const { registerSubmitHandler } = useContext(AuthContext);
-    const { values, onChange, onSubmit, onBlur, errors } = useForm(registerSubmitHandler, {
+    const [hasError, setHasError] = useState();
+
+    const registerHandler = async (values) => {
+        try {
+            await registerSubmitHandler(values);
+        } catch (e) {
+            setHasError({ message: e.message });
+        }
+    }
+
+    const { values, onChange, onSubmit, onBlur, errors } = useForm(registerHandler, {
         [RegisterFormKeys.Email]: '',
         [RegisterFormKeys.Password]: '',
         [RegisterFormKeys.ConfirmPassword]: '',
@@ -31,6 +42,7 @@ const RegisterForm = () => {
     return (
         <section className={styles['register-form']}>
             <h3 className="text-center mb-4">Register to EventsExplorer</h3>
+            {hasError && <ErrorAlert message={hasError.message}/>}
             <Form onSubmit={onSubmit}>
                 <Form.Group as={Row} className="mb-3" controlId="email">
                     <Form.Label column sm="4">Email:</Form.Label>

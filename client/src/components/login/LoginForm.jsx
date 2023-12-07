@@ -2,9 +2,9 @@ import { Button, Col, Row } from "react-bootstrap";
 import Form from 'react-bootstrap/Form';
 import styles from './LoginForm.module.css';
 import useForm from "../../hooks/useFormHook";
-import * as authService from "../../services/authService";
 import AuthContext from "../../context/authContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
+import ErrorAlert from "../something-wrong/ErrorAlert";
 
 
 const LoginFormKeys = {
@@ -15,20 +15,29 @@ const LoginFormKeys = {
 const validationRules = {
     password: { minLength: 6, message: 'Please enter a password with at least 6 characters.' },
     email: { type: 'email', message: 'Please provide a valid email address.' },
-
 }
 
 const LoginForm = () => {
     const { loginSubmitHandler } = useContext(AuthContext);
+    const [hasError, setHasError] = useState();
 
+    const loginHandler = async (values) => {
+        try {
+            await loginSubmitHandler(values);
+        } catch (error) {
+            setHasError({ message: error.message });
+        }
+    }
 
-    const { values, onChange, onSubmit, onBlur, errors } = useForm(loginSubmitHandler, {
+    const { values, onChange, onSubmit, onBlur, errors } = useForm(loginHandler, {
         [LoginFormKeys.Email]: '',
         [LoginFormKeys.Password]: '',
     }, validationRules);
+        
     return (
         <section className={styles['login-form']}>
             <h3 className="text-center mb-4">Login to EventsExplorer</h3>
+            {hasError && <ErrorAlert message={hasError.message}/>}
             <Form onSubmit={onSubmit}>
                 <Form.Group as={Row} className="mb-3" controlId="email">
                     <Form.Label column sm="4">Email:</Form.Label>

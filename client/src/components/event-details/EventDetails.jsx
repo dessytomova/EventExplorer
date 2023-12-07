@@ -10,16 +10,16 @@ const EventDetails = () => {
     const { id } = useParams();
     const [event, setEvent] = useState({});
     const navigate = useNavigate();
-    const [hasError, setHasError] = useState(false);
+    const [hasError, setHasError] = useState();
 
     useEffect(() => {
         eventService
             .getOne(id)
             .then(setEvent)
-            .catch(e => setHasError(true));
+            .catch(e => setHasError({ message: e.message }));
     }, [id]);
 
-    if (hasError) return <SomethingWrong />
+    if (hasError) return <SomethingWrong message={hasError.message}/>
     return (
         <>
             <Card className={styles['card-details']}>

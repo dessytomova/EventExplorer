@@ -1,14 +1,15 @@
 import { Col, Container, Row } from "react-bootstrap";
 import styles from './SomethingWrong.module.css';
 
-const SomethingWrong = () => {
+const SomethingWrong = ({title, message}) => {
     return (
         <>
         <section  className={styles['something-wrong']}>
           <Container>
             <Row>
               <Col>
-                <h1>Oops! Something went wrong.</h1>
+                <h2>{title || 'Something went wrong.'}</h2>
+                <h2>{message || ''}</h2>
               </Col>
             </Row>
           </Container>

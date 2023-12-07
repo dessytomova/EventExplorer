@@ -22,8 +22,8 @@ export const getAllLiked = async (ownerId) => {
         load: `event=eventId:events`,
         where: `_ownerId="${ownerId}"`
     });
-    
-    return await request.get(`${baseUrl}?${query}`);;
+
+    return await request.get(`${baseUrl}?${query}`);
 }
 
 
