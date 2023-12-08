@@ -35,7 +35,7 @@ const validationRules = {
     description: { minLength: 10, message: 'Please provide a description with at least 10 characters.' },
     host: { minLength: 5, message: 'Please enter a host name with at least 5 characters.' },
     datetime: { minDate: currentDateString, message: 'Please select a future date and time.' },
-    imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid URL for the image.' },
+    imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid image URL.' },
     country: { minLength: 2, message: 'Please enter a country name with at least 2 characters.' },
     city: { minLength: 3, message: 'Please enter a city name with at least 3 characters.' },
     price: { minValue: 0, type: 'price', message: 'Please enter a valid positive number for the price.' },
