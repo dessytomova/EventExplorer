@@ -1,8 +1,8 @@
 import * as request from "../lib/request";
+import { getCurrentDate } from "../utils/dateUtils";
 
 const baseUrl = 'http://localhost:3030/data/likes';
-const currentDate = new Date();
-const currentDateString = currentDate.toISOString().slice(0, 10);
+const currentDateString = getCurrentDate();
 
 export const create = async (data) => {
 

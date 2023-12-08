@@ -8,6 +8,7 @@ import useForm from '../../hooks/useFormHook';
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import { useState } from 'react';
 import Path from '../../paths';
+import { getCurrentDate } from '../../utils/dateUtils';
 
 const formInitialState = {
     name: '',
@@ -25,8 +26,8 @@ const formInitialState = {
     price: ''
 };
 
-const currentDate = new Date();
-const currentDateString = currentDate.toISOString().slice(0, 16);
+const currentDateString = getCurrentDate();
+
 
 const validationRules = {
     name: { minLength: 5, message: 'Please enter a name with at least 5 characters.' },

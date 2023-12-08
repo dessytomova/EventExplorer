@@ -10,6 +10,7 @@ import Path from '../../paths';
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import {validate, validateMany} from "../../utils/formValidator";
 import AuthContext from '../../context/authContext';
+import { getCurrentDate } from '../../utils/dateUtils';
 
 const initialState = {
     name: '',
@@ -27,8 +28,7 @@ const initialState = {
     price: ''
 };
 
-const currentDate = new Date();
-const currentDateString = currentDate.toISOString().slice(0, 16);
+const currentDateString = getCurrentDate();
 
 const validationRules = {
     name: { minLength: 5, message: 'Please enter a name with at least 5 characters.' },

@@ -1,8 +1,9 @@
 import * as request from "../lib/request";
+import { getCurrentDate } from "../utils/dateUtils";
 
 const baseUrl = 'http://localhost:3030/data/events';
-const currentDate = new Date();
-const currentDateString = currentDate.toISOString().slice(0, 10);
+const currentDateString = getCurrentDate();
+
 
 const buildRequestBody = (data) => {
     return {
