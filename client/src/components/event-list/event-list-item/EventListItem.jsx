@@ -1,7 +1,9 @@
-import { Button, Card, Container, ListGroup } from "react-bootstrap";
-import { formatDate } from "../../../utils/dateUtils";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import ListGroup  from "react-bootstrap/ListGroup";
 import styles from './EventListItem.module.css';
 import { Link } from "react-router-dom";
+import { formatDate } from "../../../utils/dateUtils";
 
 const EventListItem = (
     {
@@ -23,13 +25,15 @@ const EventListItem = (
         onDislikeClicked,
     }
 ) => {
+    const isEventPassed = new Date(datetime) < new Date();
+
     return (
-        <Card className={styles['card-item']}>
+        <Card className={`${styles['card-item']} ${isEventPassed ? styles['passed-event'] : ''}`}>
+
             <Card.Img variant="top" src={imageUrl} />
             <Card.Body>
                 <Card.Title>
                     <Card.Link as={Link} to={`/events/${_id}`}>{name}</Card.Link>
-
                 </Card.Title>
             </Card.Body>
             <ListGroup className="list-group-flush">

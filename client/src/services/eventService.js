@@ -46,7 +46,8 @@ export const getByOwner = async (ownerId) => {
         where: `_ownerId="${ownerId}"`
     });
 
-    return await request.get(`${baseUrl}?${query}%20AND%20datetime%3E%22${currentDateString}%22&sort=datetime`);
+    //return await request.get(`${baseUrl}?${query}%20AND%20datetime%3E%22${currentDateString}%22&sort=datetime`);
+    return await request.get(`${baseUrl}?sortBy=datetime&${query}`);
 };
 
 export const getByFilter = async (filter) => {
