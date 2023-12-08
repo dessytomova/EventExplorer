@@ -13,7 +13,7 @@ const LoginFormKeys = {
 }
 
 const validationRules = {
-    password: { minLength: 6, message: 'Please enter a password with at least 6 characters.' },
+    password: { minLength: 5, message: 'Please enter a password with at least 5 characters.' },
     email: { type: 'email', message: 'Please provide a valid email address.' },
 }
 
