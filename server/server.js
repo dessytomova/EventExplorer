@@ -1400,7 +1400,7 @@
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
                 "name": "Midalidare Rock In The Wine Valley 2024",
                 "description": "Midalidare Rock In The Wine Valley 2024 will take place between July 12th and 14th. The first headliner for 2024 is the legendary Deep Purple, who will perform on July 14th, Sunday.",
-                "datetime": "2024-07-14T07:22:00.358Z",
+                "datetime": "2024-07-14T07:22:00",
                 "host": "Midalidare Estate",
                 "country": "BG",
                 "city": "Mogilovo",
@@ -1411,6 +1411,66 @@
                     "purchaseLink": "https://www.eventim.bg/bg/bileti/midalidare-rock-in-the-wine-valley-2024-s-mogilovo-obshch-chirpan-vinarna-midalidare-622117/event.html"
                 },
                 "_createdOn": 1700917263567
+            },
+            "ac7a9c50-0962-4d33-8dd7-a2aa16076ce5": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Стефан Вълдобрев и Обичайните заподозрени",
+                "description": "Стефановден е един от най-големите празници в България!\nЗатова и се събираме на този ден в клуб Mixtape 5, където Стефан Вълдобрев и Обичайните заподозрени ще ни потопят в празнична атмосфера със своята музика!",
+                "datetime": "2023-12-27T22:00",
+                "host": "Mixtape 5",
+                "country": "Bulgaria",
+                "city": "Sofia",
+                "street": "",
+                "streetNumber": "",
+                "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/408984493_767423645423977_4768550802515506023_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=QmxQNyZl1t4AX-GpZJd&_nc_ht=scontent.fsof10-1.fna&oh=00_AfDiTgG-4QHT7iHuyomYXBuv8hu_BK7LmrFRmeZ4jDbYdg&oe=6577AB43",
+                "ticketInfo": {
+                    "purchaseOptions": [
+                        "Online"
+                    ],
+                    "purchaseLink": "https://bilet.bg/bg/cart/stefan-vieldobrev-i-obicainite-zapodozreni-na-zivo-v-klub-mixtape-5-2712-4588-4588?fbclid=IwAR34Fg8_hnjfadzLMI5fN4fvueAoCJdMxabWWcYtVoXaptMLSzweZJxtFM0",
+                    "price": "30"
+                },
+                "_createdOn": 1702030096168,
+                "_id": "ac7a9c50-0962-4d33-8dd7-a2aa16076ce5"
+            },
+            "955cf8a4-5f0e-4987-bc9c-8c9ca6741960": {
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "name": "Wickeda Live",
+                "description": "Феновете на Уикеда ще могат да чуят най-големите хитове на групата „А ние с Боби двамата пием кафе“, „Мари-анна“, „Иване защо го направи“, „Ернесто Че Гевара“, както и песни от предстоящия нов албум - „Лоша жена“, „Без теб“, „О, Любима!“, „Излизам“, „Лека полека“, „6-ти юли“, „Да бъде май“.\nЗа да е още по-шумно в брас секцията ще вземат специално участие Петър Момчев(саксофон), Мишо Йосифов(тромпет), Велислав Стоянов(тромбон), а пък ударно ще забива и Деян Драгиев - Даката. Освен своите хитове, Уикеда ще представят и прочит на едни от най-големите хитове на Миленита – „София-град, душеяд“, „На село“, „Чешмеджийо“, „Водка“; на Кольо(Обратен Ефект) – „FB Hater“, „Кольо пияндето“, „Полет“; на Гурко(Анимационерите) – „Има риск“, „Snowboard“, „Mistery(С Хавайски Изпечен Нос), както и изненади от проектите на SKilleR & Atesh.\nЩе бъде шумно, ще бъде дълго, ще бъде велико!",
+                "datetime": "2023-12-22T21:00",
+                "host": "Mixtape 5",
+                "country": "Bulgaria",
+                "city": "Sofia",
+                "street": "",
+                "streetNumber": "",
+                "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/408318546_765653952267613_8120102586088624286_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=HerbthWkbKsAX-iOcV-&_nc_ht=scontent.fsof10-1.fna&oh=00_AfCA6RWPvmhC33g16qGD6w3I6sOVt8ObOhwK0HCLtCfJnA&oe=65774A0D",
+                "ticketInfo": {
+                    "purchaseOptions": [],
+                    "purchaseLink": "https://l.facebook.com/l.php?u=https%3A%2F%2Fbilet.bg%2Fbg%2Fcart%2Fwickeda-live-priiateli-bras-at-club-mixtape-2212-4587-4587%3Ffbclid%3DIwAR2Cn84vZAMd5g_CIFvTYQvUo_Zz-YjSfX0VGX8F85x6eS0j3SB3wWH-T-I&h=AT0swE-qFbZ64NfwPU8D9fQvpPH9K_GLQvhkoOA_d4Gikc1z_ujMZ57ZiWNFsn2w24sVXAbc8WhaxrFl3eIv-jecy6fuBWzBmzVXBV58ijcvAKLsTJDlkcBnhCPpFkZLAyCHVhQMs_X7n_AkRyRw&__tn__=q&c[0]=AT0Oqe6b1UUHL_Wb8mEBFHTyI4MlBsr-562Bo9Ad0foCFSILNffWnKAjq-OYPRkAg0tnTvYqF4YHboZChmLPPTKAp309hCEiJyoWGMngoUUNiPWp3SMHc68fYuwQmnP2D78Ncem-MStzCzMK9I2DwIYzPwFD",
+                    "price": ""
+                },
+                "_createdOn": 1702030275860,
+                "_id": "955cf8a4-5f0e-4987-bc9c-8c9ca6741960"
+            }, 
+            "cf768501-bc8a-4b5b-9741-8c60a87c87e0": {
+                "name": "SIRENIA, Deadscape, Ghost Warfare",
+                "description": "SIRENIA was formed by Morten Veland in January 2001. Up to date SIRENIA has released 10 albums, multiple EPs and singles. Their albums have reached international charts, receiving great reviews worldwide. Meanwhile their singles have topped radio charts in several countries. SIRENIA has toured extensively in Europe, Latin America, North America, Asia and Australia for 15 years and counting, and performed at the biggest festivals in Europe along with huge acts like: Ozzy Osbourne, Iron Maiden, Aerosmith and Korn. SIRENIA is a mixture of gothic metal and rock with classical orchestrations and electronic elements, with some influences from more extreme metal genres.",
+                "datetime": "2024-02-18T21:00",
+                "host": "Mixtape 5",
+                "country": "Bulgaria",
+                "city": "Sofia",
+                "street": "",
+                "streetNumber": "",
+                "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/398128463_806226687970455_7199747037402241655_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=QAInI4cufvIAX_oZW6J&_nc_ht=scontent.fsof10-1.fna&oh=00_AfBX35N2VygedZvVPNsaDq5U5Y3Ovc92mn9msf07Q9Q75A&oe=6577B0F5",
+                "ticketInfo": {
+                    "purchaseOptions": [],
+                    "purchaseLink": "https://l.facebook.com/l.php?u=https%3A%2F%2Fepaygo.bg%2F2001360011%3Ffbclid%3DIwAR1cVWNaM6iSKuNvpb_iDtcth2ymnNhV12un7OuAOck_Kd-nyol8zvUthqU&h=AT2yNH9Hn3Kej031HCgEyfvoE1nds0xCcfID4pepzMzx8MJztehtLPn15sytJcLFhkhj28bCLLLkCJZoDHCmLdYLCj76uo48205a4QlIH5YM1NId3e5cP-cA0zD1n_B34SV7XyEb2Qgy-dALkXZMCg",
+                    "price": ""
+                },
+                "_createdOn": 1702030619194,
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "_updatedOn": 1702030683890,
+                "_id": "cf768501-bc8a-4b5b-9741-8c60a87c87e0"
             }
         },
         likes: {
