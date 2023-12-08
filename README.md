@@ -9,7 +9,7 @@ The project involves the development of a React application for publishing music
 - Every user of the application can browse upcoming events. Past events are not displayed.
 - Registered users can create new events and edit their own events.
 - Each registered user has a dedicated page where they can view events they have liked.
-- The Softuni Practise server is used as the backend and contains preloaded data to facilitate easier project demonstration.
+- The [Softuni Practise server](https://github.com/softuni-practice-server/softuni-practice-server) is used as the backend and contains preloaded data to facilitate easier project demonstration.
 
 ## Project Structure
 
