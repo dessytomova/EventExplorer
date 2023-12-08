@@ -66,7 +66,7 @@ const EventListLiked = () => {
                     ))}
                      {!isLoading && !liked.length && (
                         <div className={styles['no-events-container']}>
-                            <h1>You have no saved events.</h1>
+                            <h1>No matching events.</h1>
                         </div>
                     )}
                 </div>
