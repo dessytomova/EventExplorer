@@ -25,7 +25,7 @@ The client-side is organized into subdirectories for each component. Each folder
 - Utils: The `utils` folder contains utility functions.
 - Services: The `services` folder includes service-related files for API requests.
 
-##### Server-side
+#### Server-side
 
 The [Softuni Practise server](https://github.com/softuni-practice-server/softuni-practice-server) is used as the backend
 
