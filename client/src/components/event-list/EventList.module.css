@@ -2,9 +2,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    /* background-color: #EECE91; */
 }
 
 .event-card {
-    width: 250px;
+    width: 220px;
     margin: 10px;
 }

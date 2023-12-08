@@ -31,5 +31,24 @@ export const getAllLiked = async (ownerId) => {
     //return await request.get(`${baseUrl}?${query}`);
 }
 
+export const getAllLikedFiltered = async (ownerId, filter) => {
+    const query = new URLSearchParams({
+        load: `event=eventId:events`,
+        where: `_ownerId="${ownerId}"`, 
+    });
+    
+    //filter active events because i cannot filter them on the practise server properly
+    let result = await request.get(`${baseUrl}?${query}`);
+    filter = filter.trim().toLowerCase();
+
+    return result.filter(like => {
+        const nameIncludesTerm = like.event.name.toLowerCase().includes(filter);
+        const descriptionIncludesTerm = like.event.description.toLowerCase().includes(filter);
+        const hostIncludesTerm = like.event.host.toLowerCase().includes(filter);
+        const citytIncludesTerm = like.event.city.toLowerCase().includes(filter);
+        
+        return (like.event.datetime > currentDateString) && (nameIncludesTerm || descriptionIncludesTerm || hostIncludesTerm || citytIncludesTerm);
+    });
+}
 
 export const remove = async (id) => await request.del(`${baseUrl}/${id}`);

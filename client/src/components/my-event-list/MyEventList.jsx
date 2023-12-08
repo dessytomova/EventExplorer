@@ -6,9 +6,10 @@ import DeleteEventModal from "../event-delete/DeleteEventModal";
 import SomethingWrong from "../something-wrong/SomethingWrong";
 import EventListItem from "../event-list/event-list-item/EventListItem";
 import AuthContext from "../../context/authContext";
-import Button  from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import { Link } from "react-router-dom";
 import Path from "../../paths";
+import InnerNav from "../inner-nav/InnerNav";
 
 const MyEventList = () => {
     const [events, setEvents] = useState([]);
@@ -18,8 +19,7 @@ const MyEventList = () => {
     const { userId } = useContext(AuthContext);
     const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setIsLoading(true);
+    const loadAll = () => {
         eventService
             .getByOwner(userId)
             .then(result => {
@@ -27,6 +27,11 @@ const MyEventList = () => {
                 setIsLoading(false);
             })
             .catch(e => setHasError({ message: e.message }));
+    }
+
+    useEffect(() => {
+        setIsLoading(true);
+        loadAll();
     }, []);
 
     const onDeleteButtonClick = (event) => {
@@ -46,18 +51,29 @@ const MyEventList = () => {
         setShowModal(false);
     }
 
+    const searchSubmitHandler = async (searchValue) => {
+        try {
+            const res = await eventService.getByOwnerFiltered(userId, searchValue.search.trim());
+            setEvents(res);
+        } catch (error) {
+            setHasError({ message: error.message });
+        }
+    }
+
     if (hasError) return <SomethingWrong message={hasError.message} />
 
     return (
         <>
             <section>
+                <InnerNav searchSubmitHandler={searchSubmitHandler} defaultDataHandler={loadAll} />
+
                 <div className={styles['event-container']}>
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
                             <EventListItem {...event} userId={userId} onDeleteButtonClick={onDeleteButtonClick} />
                         </div>
                     ))}
-                    
+
                     {!events.length && (
                         <div className={styles['no-events-container']}>
                             {isLoading && <Spinner animation="border" />}

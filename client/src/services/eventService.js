@@ -10,14 +10,14 @@ const buildRequestBody = (data) => {
         description: data.description,
         datetime: data.datetime,
         host: data.host,
-        country:data.country, 
+        country: data.country,
         city: data.city,
         street: data.street,
         streetNumber: data.streetNumber,
         imageUrl: data.imageUrl,
         ticketInfo: {
             purchaseOptions: [],
-            purchaseLink: data.purchaseLink, 
+            purchaseLink: data.purchaseLink,
             price: data.price
         }
     }
@@ -50,19 +50,38 @@ export const getByOwner = async (ownerId) => {
     return await request.get(`${baseUrl}?sortBy=datetime&${query}`);
 };
 
+
+export const getByOwnerFiltered = async (ownerId, filter) => {
+    const query = new URLSearchParams({
+        where: `_ownerId="${ownerId}"`
+    });
+    const result = await request.get(`${baseUrl}?sortBy=datetime&${query}`);
+    
+     //this is filtered this way because practise server cannot combine AND and OR unions
+    filter = filter.trim().toLowerCase();
+    return result.filter(e => {
+        const nameIncludesTerm = e.name.toLowerCase().includes(filter);
+        const descriptionIncludesTerm = e.description.toLowerCase().includes(filter);
+        const hostIncludesTerm = e.host.toLowerCase().includes(filter);
+        const citytIncludesTerm = e.city.toLowerCase().includes(filter);
+
+        return nameIncludesTerm || descriptionIncludesTerm || hostIncludesTerm || citytIncludesTerm
+    });
+};
+
 export const getByFilter = async (filter) => {
     //return await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20host%20LIKE%20"${filter}"%20OR%20city%20LIKE%20"${filter}"`);                                                       
-        
+
     //filter active events because i cannot filter them on the practise server properly
-    const result = await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20host%20LIKE%20"${filter}"%20OR%20city%20LIKE%20"${filter}"`);                                                       
+    const result = await request.get(`${baseUrl}?where=name%20LIKE%20"${filter}"%20OR%20description%20LIKE%20"${filter}"%20OR%20host%20LIKE%20"${filter}"%20OR%20city%20LIKE%20"${filter}"`);
     return result.filter(event => event.datetime > currentDateString);
-            
+
 };
 
 export const getNearest = async (pageSize) => {
     const query = new URLSearchParams({
         where: `datetime>"${currentDateString}"`,
-        offset: 0, 
+        offset: 0,
         pageSize: pageSize
     });
 
@@ -74,7 +93,7 @@ export const getNearest = async (pageSize) => {
 
 
 export const create = async (data) => {
-   
+
     const body = buildRequestBody(data);
 
     if (data.online) body.ticketInfo.purchaseOptions.push('Online');
