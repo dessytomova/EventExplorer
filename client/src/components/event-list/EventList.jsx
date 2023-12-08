@@ -91,6 +91,7 @@ const EventList = () => {
                 
                 <div className={styles['event-container']}>
                     {isLoading && <Spinner animation="border" />}
+                    {!isLoading && !events.length && <h1>No matching events</h1>}
                     {events.map((event) => (
                         <div key={event._id} className={styles['event-card']}>
                             <EventListItem {...event}
