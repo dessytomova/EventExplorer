@@ -21,7 +21,6 @@ To start the client-side, navigate to the `/client` directory in the terminal an
 
 #### Development Build:
 
-```bash
 cd client
 npm install
 npm run dev
@@ -33,14 +32,14 @@ npm install
 npm run build
 npm run preview
 
-#### Backend :
+### Backend :
 
 Manually open a command prompt and run node server.js.
 
 cd server
 node server.js.
 
-#### Authentication
+### Authentication
 The service is initialized with three users, which can be used for immediate testing:
 
 peter@abv.bg : 123456
