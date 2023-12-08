@@ -21,9 +21,18 @@ const EventListLiked = () => {
             .then(result => {
                 setLiked(result);
                 setIsLoading(false);
+
             })
             .catch(e => setHasError({ message: e.message }));
     }, []);
+
+    const onDislikeClicked = (like) => {
+
+        likeService.remove(like._id)
+            .then(result =>
+                setLiked(state => state.filter((l => l !== like)))
+            ).catch(e => setHasError({ message: e.message }));
+    }
 
     if (hasError) return <SomethingWrong message={hasError.message}/>
 
@@ -34,7 +43,10 @@ const EventListLiked = () => {
                     {isLoading && <Spinner animation="border" />}
                     {liked.map((likeEvent) => (
                         <div key={likeEvent._id}  className={styles['event-card']}>
-                            <EventListItemLiked {...likeEvent} />
+                            <EventListItemLiked 
+                                like = {likeEvent} 
+                                onDislikeClicked = {onDislikeClicked}
+                            />
                         </div>
                     ))}
                      {!isLoading && !liked.length && (

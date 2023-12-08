@@ -13,3 +13,13 @@
     max-height: 200px;
     object-fit: cover;
 }
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.like-button-container {
+    margin-left: auto;
+}
