@@ -17,7 +17,7 @@ const MyCarousel = ({
                     </div>
                     <Carousel.Caption>
                         <h3>{event.title}</h3>
-                        <p>{event.description}</p>
+                        <p>{event.description.length > 200 ? `${event.description.slice(0, 200)}...` : event.description}</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             ))}
