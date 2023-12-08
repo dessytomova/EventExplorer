@@ -43,8 +43,5 @@ node server.js.
 The service is initialized with three users, which can be used for immediate testing:
 ```bash
 peter@abv.bg : 123456
-
 george@abv.bg : 123456
-
-admin@abv.bg : admin
 ```
