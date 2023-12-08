@@ -38,7 +38,7 @@ const validationRules = {
     imageUrl: { type: 'url', minLength: 3, message: 'Please enter a valid URL for the image.' },
     country: { minLength: 2, message: 'Please enter a country name with at least 2 characters.' },
     city: { minLength: 3, message: 'Please enter a city name with at least 3 characters.' },
-    price: { minValue: 0, type: 'number', message: 'Please enter a valid positive number for the price.' },
+    price: { minValue: 0, type: 'price', message: 'Please enter a valid positive number for the price.' },
     streetNumber: { minValue: 0, message: 'Please enter a valid positive number for the street number.' },
     purchaseLink: { type: 'url', message: 'Please enter a valid URL for the purchase link.' },
 }
@@ -297,7 +297,7 @@ const EditEventForm = () => {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3" controlId="price">
-                            <Form.Label column sm="2">Price</Form.Label>
+                            <Form.Label column sm="2">Price (€)</Form.Label>
                             <Col sm="10">
                                 <Form.Control
                                     type="text"

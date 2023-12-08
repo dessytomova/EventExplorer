@@ -1,5 +1,7 @@
 const urlRegex = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/;
 const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const priceRegex = /^\d+(\.\d{1,2})?$/;
+
 
 export const validate = (rules, field, value) => {
     
@@ -13,7 +15,8 @@ export const validate = (rules, field, value) => {
             (rule.minValue !== null && rule.minValue !== undefined && +value < +rule.minValue) ||
             (rule.type === 'url' && value.length > 0 && !urlRegex.test(value)) ||
             (rule.type === 'email' && !emailRegex.test(value)) ||
-            (rule.type === 'number' && !Number.isInteger(+value))
+            (rule.type === 'number' && !Number.isInteger(+value))||
+            (rule.type === 'price' && !priceRegex.test(value))
         ) {
             error = rule.message;
         }

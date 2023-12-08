@@ -35,7 +35,7 @@ const EventDetails = () => {
                     <ListGroup.Item>{event.host}</ListGroup.Item>
                     <ListGroup.Item>{event.country} {event.country ? `, ${event.city}` : `, ${event.city}`} {event.street && `, ${event.street}`} {event?.streetNumber}</ListGroup.Item>
                     {
-                        event.ticketInfo?.price && <ListGroup.Item>{event.ticketInfo.price}</ListGroup.Item>
+                        event.ticketInfo?.price && <ListGroup.Item>€ {event.ticketInfo.price}</ListGroup.Item>
                     }
                     {
                         event.ticketInfo?.purchaseOptions?.length > 0 && <ListGroup.Item>{event.ticketInfo.purchaseOptions.join(", ")}</ListGroup.Item>
