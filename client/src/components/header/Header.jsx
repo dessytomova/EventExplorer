@@ -3,20 +3,22 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import { Link } from "react-router-dom";
 import AuthContext from '../../context/authContext';
 import Path from '../../paths';
+import styles from './Header.module.css';
+
 
 const Header = () => {
     const { isAuthenticated,username } = useContext(AuthContext);
 
     return (
         <>
-            <header id="header">
+            <header id="header" className={styles.header}>
                 <Navbar expand="lg" className="bg-body-tertiary" data-bs-theme="dark">
                     <Container fluid>
                         <Navbar.Brand as={Link} to="/">EventsExplorer</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
-                            <Nav className="justify-content-end" style={{ width: "100%" }}>
-                                <Nav.Link as={Link} to="/">Home</Nav.Link>
+                            <Nav className={styles.headerNav}>
+                                <Nav.Link as={Link} to="/" >Home</Nav.Link>
                                 <Nav.Link as={Link} to={Path.Events}>Events</Nav.Link>
                                 {!isAuthenticated && (<Nav.Link as={Link} to={Path.Login}>Login</Nav.Link>)}
                                 {!isAuthenticated && (<Nav.Link as={Link} to={Path.Register}>Register</Nav.Link>)}
