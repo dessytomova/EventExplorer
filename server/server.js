@@ -1403,6 +1403,7 @@
                 "datetime": "2024-07-14T07:22:00",
                 "host": "Midalidare Estate",
                 "country": "BG",
+                "street": "",
                 "city": "Mogilovo",
                 "streetNumber": "6239",
                 "imageUrl": "https://bg.content.eventim.com/static/uploaded/bg/u/c/w/f/ucwf_960_360.webp",
