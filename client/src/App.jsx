@@ -12,6 +12,7 @@ import NotFound from './components/not-found/NotFound';
 import RegisterForm from './components/register/RegisterForm';
 import Logout from './components/logout/Logout';
 import { AuthProvider } from './context/authContext';
+import UnauthorizedGuard from './components/UnauthorizedGuard';
 import ErrorBoundary from './components/ErrorBoundary';
 import AuthGuard from './components/AuthGuard';
 import MyEventList from './components/my-event-list/MyEventList';
@@ -19,6 +20,7 @@ import EventListLiked from './components/event-list-liked/EventListLiked';
 import Path from './paths';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './styles.css';
+
 
 
 
@@ -33,11 +35,14 @@ function App() {
           <Container className="mt-4 mb-4 flex-grow-1">
             <Routes>
               <Route path={Path.Home} element={<Home />} />
-              <Route path={Path.Login} element={<LoginForm />} />
-              <Route path={Path.Register} element={<RegisterForm />} />
               <Route path={Path.Events} element={<EventList />} />
               <Route path={Path.Events + '/:id'} element={<EventDetails />} />
 
+              <Route element={<UnauthorizedGuard />}>
+                <Route path={Path.Login} element={<LoginForm />} />
+                <Route path={Path.Register} element={<RegisterForm />} />
+              </Route>
+              
               <Route element={<AuthGuard />}>
                 <Route path={Path.Events + '/add'} element={<CreateEventForm />} />
                 <Route path={Path.Events + '/:id' + '/edit'} element={<EditEventForm />} />
