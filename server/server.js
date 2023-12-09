@@ -1446,7 +1446,7 @@
                 "imageUrl": "https://scontent.fsof10-1.fna.fbcdn.net/v/t39.30808-6/408318546_765653952267613_8120102586088624286_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=d8d9c5&_nc_ohc=HerbthWkbKsAX-iOcV-&_nc_ht=scontent.fsof10-1.fna&oh=00_AfCA6RWPvmhC33g16qGD6w3I6sOVt8ObOhwK0HCLtCfJnA&oe=65774A0D",
                 "ticketInfo": {
                     "purchaseOptions": [],
-                    "purchaseLink": "https://l.facebook.com/l.php?u=https%3A%2F%2Fbilet.bg%2Fbg%2Fcart%2Fwickeda-live-priiateli-bras-at-club-mixtape-2212-4587-4587%3Ffbclid%3DIwAR2Cn84vZAMd5g_CIFvTYQvUo_Zz-YjSfX0VGX8F85x6eS0j3SB3wWH-T-I&h=AT0swE-qFbZ64NfwPU8D9fQvpPH9K_GLQvhkoOA_d4Gikc1z_ujMZ57ZiWNFsn2w24sVXAbc8WhaxrFl3eIv-jecy6fuBWzBmzVXBV58ijcvAKLsTJDlkcBnhCPpFkZLAyCHVhQMs_X7n_AkRyRw&__tn__=q&c[0]=AT0Oqe6b1UUHL_Wb8mEBFHTyI4MlBsr-562Bo9Ad0foCFSILNffWnKAjq-OYPRkAg0tnTvYqF4YHboZChmLPPTKAp309hCEiJyoWGMngoUUNiPWp3SMHc68fYuwQmnP2D78Ncem-MStzCzMK9I2DwIYzPwFD",
+                    "purchaseLink": "https://bilet.bg/bg/cart/wickeda-live-priiateli-bras-at-club-mixtape-2212-4587-4587?fbclid=IwAR0SjlwataBFXgTEEJsMVpmH_o7fIov3vEbm_jOyPdEoyqdQyOmW2MsiVf4",
                     "price": ""
                 },
                 "_createdOn": 1702030275860,

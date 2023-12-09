@@ -1,3 +1,4 @@
+import Container from 'react-bootstrap/Container';
 import { Route, Routes } from 'react-router-dom';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
@@ -8,7 +9,6 @@ import EditEventForm from './components/event-edit/EventEditForm';
 import CreateEventForm from './components/event-create/CreateEventForm';
 import LoginForm from './components/login/LoginForm';
 import NotFound from './components/not-found/NotFound';
-import { Container } from 'react-bootstrap';
 import RegisterForm from './components/register/RegisterForm';
 import Logout from './components/logout/Logout';
 import { AuthProvider } from './context/authContext';
